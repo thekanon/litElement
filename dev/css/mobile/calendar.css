@@ -1,0 +1,225 @@
+/* For the details, see: http://flowplayer.org/tools/dateinput/index.html#skinning */
+
+/* calendar root element */
+#calroot{
+	/* place on top of other elements. set a higher value if nessessary */
+	z-index:7777;
+	margin-top:-1px;
+    -moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	-moz-box-shadow:0 2px 5px #cccccc;
+	-webkit-box-shadow:0 2px 5px #cccccc;
+    box-shadow:0 2px 5px #cccccc;	
+	border:1px solid #9eafce;
+	width:21em;
+}
+#calymroot{
+	z-index:7777;
+	margin-top:-1px;
+    -moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	-moz-box-shadow:0 2px 5px #cccccc;
+	-webkit-box-shadow:0 2px 5px #cccccc;
+    box-shadow:0 2px 5px #cccccc;	
+    background:#333333;    
+    border:1px solid #9eafce;
+    width:12em;
+}
+/* head. contains title, prev/next month controls and possible month/year selectors */
+#calhead, #calymhead{	
+	padding:5px;
+	height:25px; 
+	text-align:center;
+	background:#1f52b1;
+} 
+#caltitle, #calymtitle{
+	color:#ffffff;
+	font-weight:bold;
+	display:inline;
+}
+#calhead .icon-today{
+	border:1px solid #9fc3e4;
+	background:#559bdd;
+    color:#ffffff !important;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+    font-size:12px;
+    text-align:center;
+    font-weight:bold;
+    padding:2px;
+    width:auto;
+}
+#calprev, #calymprev{
+	display:block;
+	width:20px;
+	height:20px;
+	background:url(./image/de-icons.png) no-repeat -114px -76px;
+	cursor:pointer;
+	float:left;
+	margin-top:2px;
+}
+#calnext, #calymnext{
+	display:block;
+	width:20px;
+	height:20px;
+	background:url(./image/de-icons.png) no-repeat -175px -76px;
+	cursor:pointer;
+	float:right;
+	margin-top:2px;
+}
+#calprev:hover, #calymprev:hover, #calnext:hover, #calymnext:hover{
+	background-color:rgba(0,0,0,.6);
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+}
+#calprev.caldisabled, #calnext.caldisabled, #calymprev.caldisabled, #calymnext.caldisabled{
+	visibility:hidden;	
+}
+#calbody, #calymbody{
+    background:#ffffff;
+}
+/* year/month selector */
+#caltitle select, #calymtitle select{
+	font-size:12px;
+}
+#caltitle select#calyear{
+	width:30%;
+}
+
+#caltitle select#calmonth{
+	width:21%;
+}
+#caltitle select#calyear, #caltitle select#calmonth, #caltitle select, #calymtitle select{
+    background:transparent;
+    border:transparent;
+    color:#ffffff;
+    font-size:14px;
+    font-weight:bold;
+}
+:root #caltitle select#calyear, :root #caltitle select#calmonth, :root #caltitle select, :root #calymtitle select{
+	background:#ffffff\9;
+	border-color:#dddddd\9;
+}
+#caltitle select#calyear option, #caltitle select#calmonth option, #caltitle select option, #calymtitle select option{
+	color:#000000;
+	font-size:12px;
+}
+ #calymtitle select#calymyear{
+	width:50%;
+}
+/* names of the days */
+#caldays, #calymdays{
+	font-size:12px;
+	padding-top:10px;
+	display:inline-block;
+}
+#caldays span, #calymdays span{
+	display:block;
+	float:left;
+	text-align:center;
+	color:#313131;
+	font-weight:bold;
+	width:2.5em;
+	margin-left:1px;
+}
+/* container for weeks */
+#calweeks, #calymweeks{
+	display: inline-block;
+}
+/* single week */
+.calweek, .calymweek{
+	clear:left;
+	height:22px;
+}
+/* single day */
+.calweek a, .calymweek a{
+	display:block;
+	float:left;
+	text-decoration:none;
+	text-align:center;
+	border:1px solid transparent;	
+	width:2.1em;
+    height:2.1em;
+    margin-left:4px;
+	font-size:12px;
+	line-height:2em;
+	font-weight:normal;
+	color:#3c3c3c;
+} 
+/* different states */
+.calweek a:hover, .calymweek a:hover{
+	border:1px solid #D5D5D5;
+	background: #ffffff;	
+	color:#f53989;
+}
+/* sunday */
+a.calsun, a.calymsun{
+	color:#e50101 !important; 		
+}
+/* offmonth day */
+a.caloff, a.calymoff{
+	color:#bbbbbb;
+	border:1px solid transparent;
+	text-shadow:none;
+}
+a.caloff:hover, a.calymoff:hover{
+	background:#f5f5f5;
+	border:1px solid #cccccc ;
+	color:#999999 !important;	
+}
+/* unselecteble day */
+a.caldisabled, a.calymdisabled{
+	background:#efefef !important;
+	color:#cccccc !important;
+	cursor:default;
+}
+/* current day */
+#calcurrent, #calymcurrent, .calfocus{
+	background:#f53989;
+	color:#ffffff !important;
+	-moz-border-radius:30px; 
+	-webkit-border-radius:30px; 
+ 	border-radius:30px;
+ 	font-weight:bold;
+}
+/* today */
+#caltoday, #calymtoday{
+	background:#1f52b1;
+	color:#ffffff !important; 
+	-moz-border-radius:30px; 
+	-webkit-border-radius:30px; 
+ 	border-radius:30px;
+ 	font-weight:bold;
+}
+#calcurrent:hover, #calymcurrent:hover, .calfocus:hover, #caltoday:hover, #calymtoday:hover{
+	border:1px solid transparent;
+}
+a.calsaturday{
+	color:#1F5CC7;
+}
+a.calsunday, #calymsunday{
+	color:#DC1818;
+}
+/* cal icon-image */
+.caltrigger, .calymtrigger{
+    background:url(./image/de-icons.png) no-repeat scroll 0 -250px transparent;
+    cursor:pointer;
+	width:21px;
+    height:20px;
+	border:none;
+	margin:0 0 0 2px;
+	vertical-align: middle !important;
+}
+.caltrigger:hover , .calymtrigger:hover {
+	
+}
+.caltrigger.state-disabled, .calymtrigger.state-disabled, .caltrigger[disabled], .calymtrigger[disabled]{
+    background:url(./image/de-icons.png) no-repeat 0 -276px;
+    -moz-opacity:.8;
+    opacity:.8;
+    border:none;
+}

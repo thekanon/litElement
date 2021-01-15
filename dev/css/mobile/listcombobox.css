@@ -1,0 +1,132 @@
+/* options list */
+.naw-combo-list-pnl{
+	z-index:7777;
+	overflow:hidden;
+	border:1px solid #c5c5c5;
+	background-color:#ffffff;
+	cursor:default;
+	font-size:12px;
+	position:absolute;
+	top:0px;
+	margin-top:-1px !important;
+}
+.naw-combo-list-pnl .naw-combo-list{
+	border:none;
+}
+.naw-combo-list-title{
+	font-weight:bold;
+	text-align:center;
+}
+.naw-combo-list-title ul{
+	height:22px;
+	width:100%;
+	background-color:#447acb;
+	border-color:#e6e6e6;
+	border-style:solid;
+    border-width:0 1px 1px 0;
+}
+.naw-combo-list-title li{
+	float:left;
+   	list-style-type:none;
+   	border-style:solid;
+    border-width:0 0 1px 1px;
+    border-color:#e6e6e6;
+   	border-collapse:collapse;
+   	color:#ffffff;
+   	text-align:left;
+   	overflow:hidden;
+   	height:22px;
+   	width:100%;
+   	line-height:22px;
+   	text-indent:5px;
+}
+.naw-combo-list-title li:first-child{
+	border-left:none;
+}
+.naw-combo-list{
+	overflow-y:auto;
+	overflow-x:hidden;
+	display:block;
+	clear:both;
+	max-height:120px;
+}
+.naw-combo-list div{
+	white-space:nowrap;
+	overflow:hidden;
+	height:22px;
+	padding:0;
+}
+/* selection option line */
+.naw-combo-selected/* naw-combo-optionSelected */{
+	background-color:#f2f2f2 !important;    
+}
+.naw-combo-selected ul li{
+	color:#1f52b1 !important;
+    font-weight:bold;
+}
+/* selection ico-image */
+/* naw-combo-optionIco */
+.naw-combo-icon{
+    margin-left:-20px !important;
+    width:20px;
+    height:21px;
+    cursor:pointer;
+    border:none;
+    vertical-align:middle !important;
+    background-image:url(./image/combobox-icon.png);
+    background-repeat:no-repeat;
+    background-position:right center;
+}
+.naw-combo-icon:hover{
+    
+}
+.highlight{
+    background-color:#fddbaf;
+}
+/* State-disabled */
+.listcombobox-pnl.state-disabled input{
+	background:#dddddd;
+	color:#a0a0a0;
+	border:1px solid #b3b3b3;
+	-moz-box-shadow:none;
+    -webkit-box-shadow:none;
+    box-shadow:none;
+	text-shadow:none;
+	-moz-opacity:.7;
+    opacity:.7;
+}
+.listcombobox-pnl.state-disabled .naw-combo-icon:hover{
+    cursor:default;
+}
+/* combo-grid-view */
+.naw-combo-list.combo-grid-view > div{
+	
+}
+.naw-combo-list.combo-grid-view > div:hover{
+	background-color:#eaf3fb !important;
+}
+.naw-combo-list.combo-grid-view > div:last-child{
+	border-bottom:none;
+}
+.naw-combo-list.combo-grid-view li{
+   float:left;
+   list-style-type:none;
+   border-left:1px solid #e6e6e6;
+   border-collapse:collapse;
+   color:#121212;
+   text-align:left;
+   overflow:hidden;
+}
+.naw-combo-list.combo-grid-view li:first-child{
+	border-left:none;
+}
+/* 占쎈퉲�겫�룞�삕 */					
+.naw-combo-list.combo-grid-view li > p{
+	padding:0 5px;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+.naw-combo-list.combo-grid-view > div:nth-child(even){
+
+}

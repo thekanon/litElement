@@ -1,0 +1,170 @@
+/* fileupload-pnl
+================================== */
+.fileupload-pnl{
+	margin:0;	
+	border:2px solid transparent;
+}
+.file-drag-text{
+	color:#bfc1c7;
+    text-align:left;
+    vertical-align:middle;
+    padding-left:20px;
+    font-weight:bold;
+    font-size:17px;
+}
+.file-drag{
+	border:2px solid #00a7eb;    
+}
+.file-drag:after{
+	content: "+";
+    display: inline-block;
+    width:40px;
+    height:40px;
+    margin:auto auto;
+    position:absolute;
+    background-color:rgba(0,0,0,.4);
+    top:0px;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index:1;
+    font-size:30pt;
+    color:#ffffff;
+    text-align:center;
+    font-weight:bold;
+    line-height:30px;
+    border-radius:20px;
+}
+.file-ext{
+	width:-webkit-calc(100% - 330px);
+    width:-moz-calc(100% - 330px);
+    width:calc(100% - 330px);
+    float:right;
+}
+.file-size{
+	right:5px;
+    top:5px;
+    font-size:12px;
+    color:#999999;
+    display:inline-block;
+    width:120px;
+    text-align:right;
+    float:right;
+}
+.file-progressbar{
+	display:inline-block;
+    top:6px;
+    left:20px;
+    width:150px;
+    height:13px;
+    background:#e2e2e2;
+    float:left;
+    -moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	border:1px solid #e2e2e2;
+}
+.file-progress{
+/* 	width:50%; */
+	background:#ec686d;
+	height:13px;
+	display:inline-block;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+}
+.fileupload-pnl .empty-pnl{
+	min-height:auto;
+}
+/* fileupload button style */
+.fileupload-button/* fileuploadButtom */{
+	color: #ffffff;
+	font-size:1em;
+	padding:0.1em 0.4em 0 0.35em;
+	text-shadow:0 0 2px #666666;
+	font-weight:bold;
+	border: solid 1px #479dd9;
+	background: #479dd9 url(./image/bt-bg.png) repeat-x 0 0;
+	-moz-box-shadow:0 1px 2px #b2b2b2;
+	-webkit-box-shadow:0 1px 2px #b2b2b2;
+    box-shadow:0 1px 2px #b2b2b2;
+	height:1.9em;
+	margin-left:2px;
+}
+.fileupload-button:hover/* fileuploadButtom:hover */{
+	color: #479dd9;
+	background: #eeeded;
+  	background:-webkit-linear-gradient(top, #ffffff 0%, #ebebeb 100%); 
+	background:-moz-linear-gradient(top, #ffffff 0%, #ebebeb 100%); 
+	background:-ms-linear-gradient(top, #ffffff 0%, #ebebeb 100%);  
+	background:-o-linear-gradient(top, #ffffff 0%, #ebebeb 100%); 
+	background:linear-gradient(to bottom, #ffffff 0%, #ebebeb 100%);
+   	border: solid 1px #3a9dc5;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	text-shadow:none;
+}
+.fileupload-cancel-button/* fileuploadItemCancel */{
+	cursor:pointer;
+	background: url(./image/de-icons.png) no-repeat scroll -180px -104px;
+	width:15px;
+	height:15px;
+	float:right;
+	top:0;
+}
+.fileupload-cancel-button:hover/* fileuploadItemCancel:hover */{
+	background-position:-195px -104px;
+}
+/* fileupload Table area style */
+.fileupload-table/* fileuploadTable */{
+	vertical-align : middle;
+	width:100%;
+}
+.fileupload-table tr/* fileuploadTable tr */{
+	line-height:2.3em;
+}
+.fileupload-header-tr/* fileuploadHeaderTr */{
+	background:#ffffff;
+	color:#313131;
+	text-shadow:1px 1px 0 #f5f5f5;
+	font-weight:bold;
+	height:2.3em;
+}
+.fileupload-body-tr:first-child{
+    border-top:0px solid #6d6eb8 !important;
+}
+.fileupload-body-tr td:first-child{
+    border-left:0px solid #6d6eb8 !important;
+}
+.fileupload-body-tr td:last-child{
+    border-bottom:0px solid #6d6eb8 !important;
+}
+.fileupload-table-pnl{
+	border:1px solid #cccccc !important;
+}
+.fileuploadlist-table-pnl tr:first-child td{
+	border-top:0px solid #6d6eb8 !important;
+}
+.fileupload-header-td/* fileuploadHeaderTd */{
+	text-align:center;
+	padding:2px 10px 0 !important;
+	border:1px solid #E0E0E0 !important;
+	border-top:1px solid #555 !important;
+	background-color:#F4F4F4 !important;
+	border-width: 1px 0 !important;
+}
+.fileupload-body-tr/* fileuploadBodyTr */{
+	background:#FDFDFD;
+}
+.fileupload-body-td/* fileuploadBodyTd */{
+	text-align:left !important;
+	/*border:1px solid #E0E0E0 !important;*/
+	padding:2px 10px 0 !important;
+	background-color:#ffffff !important;
+	font-weight:bold;
+	color:#737373;
+	border-width: 1px 0;
+	border-color: #e0e0e0 !important;
+	border-style: solid;
+}

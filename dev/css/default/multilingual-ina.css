@@ -1,0 +1,119 @@
+@charset "utf-8"; /* encoding */
+
+/* Common-4.x.css
+================================== */
+/* 조회 버튼 */
+.dosearch{
+	height:28px;
+	width:60px;
+	border:none;
+	background:url(./image/icons-ina.png) no-repeat 0 0;
+}
+
+/* Layout.css
+================================== */
+/* Card Menu */
+.west-icon-siteMap{
+	background: url(./image/layout-cardmenu-icons-ina.png) no-repeat 0 0;
+}
+.west-icon-siteMap-pin{
+	background: url(./image/layout-cardmenu-icons-ina.png) no-repeat -20px 0;
+}
+.west-icon-accodionMap{
+	background: url(./image/layout-cardmenu-icons-ina.png) no-repeat 0 -102px;
+}
+.west-icon-accodionMap-pin{
+	background: url(./image/layout-cardmenu-icons-ina.png) no-repeat -20px -102px;
+}
+.west-icon-favorite{
+	background: url(./image/layout-cardmenu-icons-ina.png) no-repeat 0 -204px ;
+}
+.west-icon-favorite-pin{
+	background: url(./image/layout-cardmenu-icons-ina.png) no-repeat -20px -204px ;
+}
+.west-icon-memo{
+	background: url(./image/layout-cardmenu-icons-ina.png) no-repeat 0 -306px ;
+}
+.west-icon-memo-pin{
+	background: url(./image/layout-cardmenu-icons-ina.png) no-repeat -20px -306px ;
+}
+.west-icon-workFlow{
+	background: url(./image/layout-cardmenu-icons-ina.png) no-repeat 0 -408px;
+}
+.west-icon-workFlow-pin{
+	background: url(./image/layout-cardmenu-icons-ina.png) no-repeat -20px -408px;
+}
+/* 메모쓰기 버튼 */
+.memo-write-btn{
+	background:url(./image/icons-ina.png) no-repeat -200px -139px;
+}
+/* 즐겨찾기추가버튼 */
+.mymenu-add-icon{
+	background: url(./image/icons-ina.png) no-repeat -20px -139px;
+}
+/* 워크플로우 가이드 버튼 */
+.workflow-guide-btn{
+	background:url(./image/icons-ina.png) no-repeat scroll -268px -139px;
+ }	
+/* 워크플로우 신규 버튼 */
+.workflow-add-btn{
+	background:url(./image/icons-ina.png) no-repeat 0 -311px;
+}
+/* 워크플로우 편집 버튼 */
+.workflow-upd-btn{
+	background:url(./image/icons-ina.png) no-repeat -46px -311px;
+}
+/* 워크플로우 삭제 버튼 */
+.workflow-del-btn{
+	background:url(./image/icons-ina.png) no-repeat -92px -311px;
+}
+
+/* Taskbar.css
+================================== */
+/* 선택닫기 버튼 */
+.close-button{
+	background:url(./image/icons-ina.png) no-repeat -132px -139px;
+}
+
+/* Popwindow.css
+================================== */
+/* 즐겨찾기 추가 버튼 */
+.favoriteadd-button{
+	background:url(./image/icons-ina.png) no-repeat -276px -311px;
+}
+/* 즐겨찾기 취소 버튼 */
+.favoritecancel-button{
+	background:url(./image/icons-ina.png) no-repeat -322px -311px;
+}
+/* 메모관리-등록 버튼 */
+.memo-w-add-button{
+	background:url(./image/icons-ina.png) no-repeat -138px -311px;
+}
+/* 메모관리-수정확인 버튼 */
+.memo-w-update-button{
+	background:url(./image/icons-ina.png) no-repeat -230px -311px;
+}
+/* 메모관리-수정삭제 버튼 */
+.memo-w-delete-button{
+	background:url(./image/icons-ina.png) no-repeat -92px -311px;
+}
+
+/* Workflow.css
+================================== */
+/* 등록 버튼 */
+.workfloweditor-add-btn{
+	background:url(./image/icons-ina.png) no-repeat -록38px -311px;
+}
+/* 등록 버튼 */
+.workfloweditor-cancel-btn{
+	background:url(./image/icons-ina.png) no-repeat -322px -311px;
+}
+/* 편집 버튼 */
+.workfloweditor-update-btn{
+	background:url(./image/icons-ina.png) no-repeat -46px -311px;
+}
+/* 삭제 버튼 */
+.workfloweditor-delete-btn{
+	background:url(./image/icons-ina.png) no-repeat -92px -311px; 
+}
+

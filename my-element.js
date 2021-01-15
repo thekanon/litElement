@@ -12,7 +12,7 @@
  * http://polymer.github.io/PATENTS.txt
  */
 
-import {LitElement, html, css} from 'lit-element';
+import {LitElement, html, css} from './node_modules/lit-element/lit-element.js';
 
 /**
  * An example element.
@@ -64,6 +64,7 @@ export class MyElement extends LitElement {
 
   _onClick() {
     this.count++;
+    this.name = 'World';
   }
 }
 

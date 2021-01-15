@@ -1,0 +1,160 @@
+.listcombobox-pnl{
+	outline: 0;
+	white-space: nowrap;
+	position: relative;
+	display: inline-block;
+	overflow: visible;
+	vertical-align: middle;
+	line-height: normal;
+}
+.listcombobox-pnl * {
+	box-sizing: content-box;
+}
+.listcombobox-dropdown-wrap{
+	display: block;
+	position: relative;
+/* 	border: 1px solid #f0f0f0 !important; */
+	border-radius: 2px;
+/*	background-color: #fafafa;*/
+	padding-right: 20px;
+	padding-bottom: 1px;
+/* 	transition: all 0.3s; */
+	outline: 0;
+}
+.listcombobox-dropdown-wrap.listcombobox-state-hover{
+/* 	border-color:#f5f5f5 !important; */
+/* /* 	box-shadow: 0 2px 6px rgba(0, 0, 0, .2), 0 2px 3px rgba(0, 0, 0, .05); */ */
+/* 	box-shadow: 0 1px 3px rgba(0, 0, 0, .2); */
+}
+.listcombobox-input {
+	outline: 0;
+	vertical-align: top;
+	overflow: hidden;
+	text-overflow: ellipsis;
+/* 	border: 0 !important; */
+/* 	height: 22px !important; */
+	padding: 0 20px 0 2px !important;
+	width: 100%;
+	font-size: 12px;
+    background:#ffffff url(./image/combobox-icon.png) no-repeat right 2px !important;
+/*     box-shadow: 0 1px 3px rgba(0, 0, 0, .2); */
+/*     border: 1px solid #b9b9b9; */
+}
+.listcombobox-input:hover{
+	border-color:#ff6600 !important;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+}
+.listcombobox-select{
+	width: 18px;
+	vertical-align: middle;
+	text-align: center;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: inline-block;
+	text-decoration: none;
+	border-color: #f0f0f0;
+	border-radius: 0 2px 2px 0;
+	border-width: 0 0 0 1px;
+	border-style: solid;
+	outline: 0;
+	margin: 0 !important;
+}
+.listcombobox-down-arrow{
+	width: 16px;
+	height: 16px;
+	background: url(./image/combobox-icon.png) no-repeat;
+	display: block;
+	margin-top: 1px;
+	outline: 0;
+}
+.list-container{
+	border	: 1px solid #e6e6e6;
+	visibility: hidden;
+	position: absolute;
+	z-index: 120000;
+	font-size: 12px;
+}
+.list-container table{
+	width: 100%;
+	margin: 0;
+	max-width: none;
+	border-collapse: separate;
+	border-spacing: 0;
+	empty-cells: show;
+	border-width: 0;
+	outline: 0;
+	table-layout: fixed;
+}
+.list-container th, .list-container td{
+	padding: 0 5px;
+}
+.list-container table tr td{
+	border-bottom-width: 1px;
+	border-style: solid;
+	vertical-align: middle;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	border-width: 0 0 0 1px;
+	border-color: #e6e6e6;
+}
+.list-header{
+	border-color: #e6e6e6;
+	background-color: #7a99ac;
+	color: #444;
+	overflow: hidden;
+	border-style: solid;
+	border-width: 0 1px 0 0;
+	border-bottom-width: 1px;
+	width: 100%;
+}
+.list-header table{
+	margin-bottom: -1px;
+}
+.list-header th{
+	overflow: hidden;
+	border-style: solid;
+	border-width: 0 0 1px 1px;
+	border-color: #e6e6e6;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-align: left;
+	color:#ffffff;
+}
+.list-header th:first-child{
+	border-left-width: 0;
+}
+.list-content{
+	white-space: normal;
+	position: relative;
+	width: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	min-height: 0;
+	background: #fff;
+}
+.list-content table tr:first-child td{
+	border-top: 0;
+}
+.list-content tr td:first-child{
+	border-left-width: 0;
+}
+.list-content tr:hover{
+	background-color:#fff5e2 !important;
+}
+.list-row-selected{
+	background-color:#e8e8e8 !important;
+	color:#000;
+}
+
+.list-content .highlight{
+	background-color:initial;
+}
+.list-text .highlight{
+	background-color:#ffe177 !important;
+}
+
+
+
+

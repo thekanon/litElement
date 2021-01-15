@@ -1,0 +1,76 @@
+/* Screenguide-editor
+================================== */
+body{
+	background:#EFEFEF;
+}
+#wrap-fldst{
+	position:relative; 
+	margin:5px;
+	border:1px solid #E3E3E3;
+	background:#ffffff;
+	font-size:1.2em;
+}
+.pop-title{
+	height:110px;
+	margin:0 5px;
+}
+/* screenguide-editor-header */
+#screenguide.pop-title{
+	background:#ffffff url(./image/pop-bg.png) no-repeat right -400px;
+	border-bottom:2px solid #bed8f5;
+	margin:5px;
+}
+/* screenguide-editor-search-pnl */
+.screenguide-search-header-pnl{
+	background: #EFEFEF ;
+	border:1px solid #d7dbe5;
+	padding:5px 10px;
+	margin:5px;
+	height:32px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+    border-radius:3px;
+}
+.screenguide-search-header{
+	float:left;
+}
+.screenguide-search-title{
+	background: url(./image/list-icon10.png) no-repeat scroll 0 4px transparent;
+	line-height: 1.8em;
+	color: #262c33;
+	font-weight:bold;
+	margin:5px 10px;
+	padding:0 0 0 10px;
+}
+.buttonset{
+	margin:5px;
+}
+.screenguide-submit-btn{
+	background:url(./image/icons.png) no-repeat -138px -311px;
+	width:46px;
+	height:20px;
+	border:none;
+}
+.screenguide-submit-btn:hover{
+	background:url(./image/icons.png) no-repeat -138px -331px;
+}
+.screenguide-cancel-btn{
+	background:url(./image/icons.png) no-repeat -322px -311px;
+	width:46px;
+	height:20px;
+	border:none;
+}
+.screenguide-cancel-btn:hover{
+	background:url(./image/icons.png) no-repeat -322px -331px;
+}
+#guide{
+	margin-top:10px;
+}
+.screenguide-search-pnl{
+	background: #ffffff;
+	margin: 3px;
+    padding: 2px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+    border-radius:3px;
+}

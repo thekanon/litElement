@@ -1,0 +1,78 @@
+.autocomplete-results{
+	overflow:hidden;
+	z-index:99999;
+	background:#ffffff;
+	padding:5px;
+    border:1px solid #bbb;
+	/* left:10px; */
+	left:auto;
+    right:5px;
+}
+.autocomplete-results ul{
+	width:100%;
+	list-style:none outside none;
+	margin:0;
+	max-height:185px;
+    overflow:auto;
+}
+.autocomplete-results li{
+	display:block;
+	font-size:12px;
+	font-weight:normal;
+	line-height:18px;
+	cursor:pointer;
+	overflow:hidden;
+	margin:0px;
+	padding:2px 5px;
+	color:#7F7F7F;
+}
+.autocomplete-loading{
+
+}
+.autocomplete-odd{
+	
+}
+.autocomplete-over{
+	background:#f4f4f4;
+	color:#434343 !important;
+	font-weight:bold !important;
+}
+/* 검색어 highlight */ 
+.autocomplete-search-word{
+	font-weight:bold;
+	color:#ff6600;
+}
+/* ie11 X button */
+input::-ms-clear{
+	display:none;
+}
+/* menu-search */
+.autocomplete-results.search{
+	width:130px;
+	top:53px;
+	right:14px;
+    position:absolute;
+}
+.autocomplete-results.search ul li{
+	white-space:nowrap;
+    text-overflow:ellipsis;
+}
+
+.autocomplete-results.search .autocomplete-search-word{
+	color:#ff6600;
+}
+/* favorite */
+.autocomplete-results.favorite{
+	width: 210px;
+	top: 160px;
+	right: 44px;
+	position:absolute;
+	/*
+    height:305px;
+    overflow:auto;
+    */
+}
+.autocomplete-results.favorite ul li{
+	white-space:nowrap;
+    text-overflow:ellipsis;
+}

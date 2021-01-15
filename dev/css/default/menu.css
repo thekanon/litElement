@@ -1,0 +1,105 @@
+.menu{
+	line-height:20px;
+	float:left;
+	top:24px;
+	overflow:hidden;	
+	font-size:14px;
+	left:0;
+}
+.menu div{
+	clear:both;
+}
+.menu>ul.menu-root, .menu>ul.menu-root, .menu>ul.menu-root>li{
+	margin:0; 
+	padding:0; 
+	border:none;
+}
+.menu>ul.menu-root{
+	height:28px; 
+	position:relative;
+}
+.menu>ul.menu-root>li{
+	list-style:none outside none; 
+	float:left; 
+	margin:0; 
+	padding:0; 
+	font-weight:bold;	
+}
+.menu>ul.menu-root>li>a{
+	float:left; 
+	display:block; 
+	text-decoration:none;
+	cursor:pointer;	
+	padding:5px 10px 10px;
+	color:#666;
+	background:url(./image/menu-icon5.png) no-repeat left 40% transparent !important;
+}
+.menu>ul.menu-root>li span{
+	float:left; 
+	display:block;  
+	padding:17px 6px;
+	text-decoration:none;
+	cursor:pointer;
+	font-weight:normal;
+}
+.menu>ul.menu-root>li>a:hover{
+	color:#ff671b;
+	background:url(./image/menu-icon4.png) no-repeat left 40% transparent !important;
+}/*
+.dc-mega-li:hover:before{	
+	content:"";
+    display:inline-block;
+    width:25px;
+    height:3px;
+    margin-left:10px;
+    background:#3f51b5;
+    position:absolute;
+    top:0;
+}*/
+.menu>ul.menu-root>li>a.state-current{
+	color:#ff671b;
+	text-shadow:none;
+	font-size:15px;	
+	padding-bottom:31px;
+	background:url(./image/menu-icon4.png) no-repeat left 23% transparent !important;
+}
+/* menu-scroller */
+.menu-scroller-left{
+	background:url(./image/de-icons.png) no-repeat -138px -76px;
+	width:13px;
+	height:20px;
+	margin:0;
+	top:28px;
+	cursor:pointer;
+	float:left;
+	visibility:hidden;
+	
+	/* display:none; */
+}
+.menu-scroller-left:hover{
+	-moz-opacity:.7;
+    opacity:.7;  
+}
+.menu-scroller-left.state-disabled{
+	background:url(./image/de-icons.png) no-repeat -98px -76px;
+}
+.menu-scroller-right{
+	background:url(./image/de-icons.png) no-repeat -158px -76px;
+	width:13px;
+	height:20px;
+	margin:0;
+	right:0;
+	top:28px;
+	cursor:pointer;
+	position:absolute;
+	visibility:hidden;
+	
+	/* display:none; */
+}
+.menu-scroller-right:hover{
+	-moz-opacity:.7;
+    opacity:.7;  
+}
+.menu-scroller-right.state-disabled{
+	background:url(./image/de-icons.png) no-repeat -198px -76px;
+}

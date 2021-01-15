@@ -1,0 +1,30 @@
+/* tree Grid Style */
+.grid-body-pnl button.tree-icon-spread{
+	background : url(./image/de-icons.png) no-repeat -180px  -119px;
+	width: 20px;
+	height : 20px;
+	border : none;
+	vertical-align : middle;
+	margin-right :2px;
+}
+.grid-body-pnl button.tree-icon-fold{
+	background : url(./image/de-icons.png) no-repeat -160px -119px;
+	width: 20px;
+	height : 20px;
+	border : none;
+	vertical-align : middle;
+	margin-right :2px;
+}
+.grid-body-pnl button.tree-icon-leaf{
+	background : url(./image/de-icons.png) no-repeat -200px  -119px;
+	width: 20px;
+	height : 20px;
+	border : none;
+	vertical-align : middle;
+	margin-right :2px;
+}
+.grid-tree-image{
+	width:15px !important;
+	margin-right:5px;
+	vertical-align:middle;
+}

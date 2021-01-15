@@ -1,0 +1,222 @@
+@charset "utf-8";
+
+/* Positioning
+================================== */
+/* float */ 
+.accordion-header span.x-icon, .accordion-header span.x-icon + a{
+	float: left;
+}
+/* float-clear */
+.accordion-header:after{
+	content: "";
+	display: block;
+	height: 0;
+	clear:both;
+	visibility: hidden;
+}
+
+/* Accordion
+================================== */
+/* accordion-pnl */
+section .accordion-pnl{
+	margin:5px;
+}
+.accordion-pnl .table-pnl, .accordion-pnl .grid-pnl, .accordion-pnl .empty-pnl{
+	
+}
+.accordion-pnl section .table-pnl, .accordion-pnl section .grid-pnl{
+	
+}
+.accordion-pnl{
+	margin:5px;
+}
+section.state-alert + .accordion-pnl{
+	margin-top:10px;
+}
+.accordion-header{	
+	cursor: pointer;
+	margin:0px;
+	padding-right:10px;
+	overflow:hidden;	
+	height:30px;
+	border:solid 1px #d9d9d9;
+	background:#f5f5f5;	
+}
+.accordion-content + .accordion-header, .accordion-content + .accordion-header.state-current{
+	margin-top:-1px;
+}
+.accordion-pnl div[sortidx] + div[sortidx]{
+	margin-top:-1px;
+}
+.accordion-header:focus{
+	outline: none;
+}
+.accordion-header a{
+	display:block;
+	text-decoration:none;
+	padding-top:7px;
+	padding-left:3.5em;
+	color:#33359e;
+}
+.accordion-header a input{
+    margin-top:-4px;
+}
+.accordion-header span.buttonset{
+	margin-top:4px;
+}
+.accordion-content{
+	border:solid 1px #D6D6D6;
+	border-top:none;
+    overflow:hidden;
+	display:none;
+	padding:5px;
+}
+.accordion-content .tab-pnl .tab-header-wrap:first-child{
+	margin-top:0;
+}
+/* Icons
+================================== */
+.accordion-header span.x-icon + a{
+	padding-left:32px;
+}
+.accordion-header span.x-icon{
+    margin-top:9px;
+	margin-left:10px;
+	height:12px;
+	width:12px;
+	display:block;
+	position:absolute;
+	overflow:hidden;
+	background-image:url(./image/de-icons.png);
+	background-position:-158px -22px;
+}
+
+/* State
+================================== */
+.accordion-header.state-current{
+	border-top:solid 1px #949494 ;
+	border-left:solid 1px #D6D6D6;
+	border-right:solid 1px #D6D6D6;
+	border-bottom:none;
+	margin:0;	
+	background:#6668bd;
+	border-color:#6668bd;
+}
+.accordion-header.state-current span.x-icon{
+	background-position:-170px -22px;
+	width:14px;
+}
+.accordion-header.state-current a{
+	margin-bottom:-1px;
+	color:#343434;
+	font-weight:bold;
+	color:#ffffff;
+}
+.accordion-content.state-current{
+	display:block;
+}
+.accordion-content section:first-child{
+	margin:0;
+}
+.accordion-header.state-hover{
+	border:1px solid #b9c1c3;
+	background: #eeeeee;
+}
+.accordion-header.state-hover a{
+	color:#343434;
+}
+.accordion-header.state-hover span.x-icon{
+
+}
+.accordion-header.state-disabled{
+	color:#7f7f7f;
+	background:#ebeaeb;
+	border:1px solid #cbcbcb;
+}
+.accordion-header.state-disabled span.x-icon{
+	background-position:-182px -22px;
+}	
+.accordion-header.state-disabled *{
+	color:#7f7f7f !important;
+	cursor:default !important;
+}
+
+/* Numbering
+================================== */
+.x-numbering .accordion-header{
+	
+}
+.x-numbering .accordion-content{
+	
+}
+.x-numbering .accordion-header.state-current{
+
+}
+.x-numbering .accordion-header.state-current + .accordion-content{
+
+}
+.x-numbering .accordion-header span.x-icon + a{
+
+}
+.x-numbering .accordion-header span.x-icon{
+    top:2px;
+	left:-4px;
+    margin-top:0;
+	margin-left:0;
+	height:30px;
+	width:34px;
+	background-image:url(./image/accordion-numbering-icons-default.png);
+	background-position: 0 0;
+	background-repeat:no-repeat;
+	border:none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+    box-shadow: none;
+}
+.x-numbering .accordion-header.state-current span.x-icon{
+	background-image:url(./image/accordion-numbering-icons-current.png);
+	top:-6px;
+	left:-4px;
+}
+.x-numbering .accordion-header.state-disabled span.x-icon{
+	background-image:url(./image/accordion-numbering-icons-disabled.png);
+}
+.x-numbering .accordion-header.state-hover span.x-icon{
+	background-image:url(./image/accordion-numbering-icons-hover.png);
+}
+.x-numbering .accordion-header span.x-icon.x-n1{
+	background-position: 0 0;
+}
+.x-numbering .accordion-header span.x-icon.x-n2{
+	background-position: -34px 0;
+}
+.x-numbering .accordion-header span.x-icon.x-n3{
+	background-position: -68px 0;
+}
+.x-numbering .accordion-header span.x-icon.x-n4{
+	background-position: -102px 0;
+}
+.x-numbering .accordion-header span.x-icon.x-n5{
+	background-position: -136px 0;
+}
+.x-numbering .accordion-header span.x-icon.x-n6{
+	background-position: -170px 0;
+}
+.x-numbering .accordion-header span.x-icon.x-n7{
+	background-position: -204px 0;
+}
+.x-numbering .accordion-header span.x-icon.x-n8{
+	background-position: -238px 0;
+}
+.x-numbering .accordion-header span.x-icon.x-n9{
+	background-position: -272px 0;
+}
+.x-numbering .accordion-header span.x-icon.x-n10{
+	background-position: -306px 0;
+}
+.x-numbering .accordion-header span.x-icon.x-n11{
+	background-position: -340px 0;
+}
+.x-numbering .accordion-header span.x-icon.x-n12{
+	background-position: -374px 0;
+}

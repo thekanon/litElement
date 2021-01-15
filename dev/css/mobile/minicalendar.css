@@ -1,0 +1,187 @@
+.minicalendar-pnl{
+	padding:5px;
+}
+#calminiroot{
+	z-index:1;	
+	padding:2px;
+	border:1px solid #d7d7d7;
+	background: #ffffff;
+ 	background:-webkit-linear-gradient(top, #ffffff 0%, #f7f7f7 100%); 
+	background:-moz-linear-gradient(top, #ffffff 0%, #f7f7f7 100%); 
+	background:-ms-linear-gradient(top, #ffffff 0%, #f7f7f7 100%);  
+	background:-o-linear-gradient(top, #ffffff 0%, #f7f7f7 100%); 
+	background:linear-gradient(to bottom, #ffffff 0%, #f7f7f7 100%);
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	-moz-box-shadow: 0 0 2px #d7d7d7;
+	-webkit-box-shadow:  0 0 2px #d7d7d7;
+    box-shadow: 0 0 2px #d7d7d7;		
+}
+#calminibody{
+	padding:2px 0 ;
+}
+#calminihead{
+	padding:2px 0 2px 10px;
+	height:2em;
+}
+#calminititle{
+	text-align:center;
+	font-size:1em;
+	float:left;
+	color:#333333;	
+	font-weight:bold;
+	line-height:1.8em;
+	margin:0 0.4em;
+	top:2px;
+}
+#calminiprev{
+	display:block;
+	width:20px;
+	height:20px;
+	margin:0.2em 0.4em 0;
+	background:url(./image/icons.png) no-repeat -258px -76px;
+	float:left;
+	cursor:pointer;
+}
+#calminiprev:hover{
+	background-position:-238px -76px;
+}
+#calmininext{
+	display:block;
+	width:20px;
+	height:20px;
+	background:url(./image/icons.png) no-repeat -278px -76px;
+	cursor:pointer;
+	float:left;
+	margin:0.2em 0.4em 0;
+}
+#calmininext:hover{
+	background-position:-298px -76px;
+}
+#calminiprev.calminidisabled, #calmininext.calminidisabled{
+	visibility:hidden;	
+}
+#calminidays{
+	height:2em;
+	padding-left:5px;
+	margin-left:3px;
+	margin-bottom:-5px;
+}
+#calminidays span{
+	display:block;
+	float:left;
+	width:13.5%;
+	font-weight:bold;
+	font-size:1em;
+	text-align:left;
+	line-height:1.5em;
+	color:#777777;
+	text-shadow:0px 1px 0 #ffffff; 
+	border:1px solid transparent;
+}
+#calminiweeks{
+	
+}
+.calminiweek{
+	clear:left;
+	height:3em;
+	padding:2px 0 2px 5px;
+	margin-left:3px;
+	margin-bottom:-5px;
+	border-top:1px solid #E4E4E4;
+}
+.calminiweek a{
+	display:block;
+	float:left;
+	width:13.5%;
+	height:2.5em;
+	text-decoration:none;
+	font-weight:bold;
+	font-size:1em;
+	text-align:left;
+	line-height:1.3em;
+	color:#3A3A3A;
+	text-shadow:0 1px 0 #f1f1f1;
+	border:1px solid transparent;
+} 
+.calminiweek a span{
+	font-weight:normal;
+	font-size:0.8em;
+} 
+.calminiweek a:hover{
+	border:1px solid #f2d7aa;
+	background: #ffffff;
+	color:#f26531;
+	text-shadow:0 0 1px #dddddd;
+}
+.calminifocus{
+	border:1px solid #f2d7aa !important;
+	background: #ffffff;
+	color:#f26531 !important;
+	text-shadow:0 0 1px #dddddd;
+}
+a.calminisunday{
+	color:#FF4142 !important;
+}
+.calminisun{
+	color:#e50101 !important; 	
+}
+a.calminioff{
+	color:#dddddd;
+	border:1px solid transparent;
+	text-shadow:none;
+}
+a.calminioff span{
+	color:#dddddd;
+} 
+.calminioff:hover{
+	background:#f5f5f5 !important;
+	border:1px solid #cccccc !important;
+	color:#999999 !important;	
+}
+a.calminioff.calminifocus{
+			
+}
+.calminidisabled{
+	background:#efefef;
+	color:#cccccc !important;
+	cursor:default;
+}
+#calminititle select{
+	font-size:1.1em;	
+}
+/* current day */
+#calminicurrent{
+	background: #feefd8 !important;
+	background:-webkit-linear-gradient(top, #feefd8 0%, #fee4bc 100%) !important; 
+	background:-moz-linear-gradient(top, #feefd8 0%, #fee4bc 100%) !important; 
+	background:-ms-linear-gradient(top, #feefd8 0%, #fee4bc 100%) !important;  
+	background:-o-linear-gradient(top, #feefd8 0%, #fee4bc 100%) !important; 
+	background:linear-gradient(to bottom, #feefd8 0%, #fee4bc 100%) !important;
+    border:1px solid #f2d7aa;
+	color:#fc7207 !important;
+	font-weight:bold;
+	text-shadow:0 0 2px #ffffff;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+}
+/* today */
+#calminitoday{
+	background: #89d4e3 !important;
+	background:-webkit-linear-gradient(top, #a2e4f1 0%, #89d4e3 100%) !important; 
+	background:-moz-linear-gradient(top, #a2e4f1 0%, #89d4e3 100%) !important; 
+	background:-ms-linear-gradient(top, #a2e4f1 0%, #89d4e3 100%) !important;  
+	background:-o-linear-gradient(top, #a2e4f1 0%, #89d4e3 100%) !important; 
+	background:linear-gradient(to bottom, #a2e4f1 0%, #89d4e3 100%) !important;
+	border:1px solid #00b5cc !important;
+	color:#ffffff !important;
+	text-shadow:0 0 2px #00b5cc;
+	-moz-border-radius:0;
+	-webkit-border-radius:0;
+	border-radius:0;
+}
+#calminiarea{
+	float:left;
+}

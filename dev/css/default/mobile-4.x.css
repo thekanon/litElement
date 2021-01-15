@@ -1,0 +1,47 @@
+/* encoding
+================================== */
+@charset "utf-8";
+
+/* common style
+================================== */
+
+
+/* dialogpopup
+================================== */
+.mobile .dialogpopup{
+	margin: 0 2%;
+	width:96% !important;
+}
+
+.mobile .dialogpopup-content{
+	width:100% !important;
+}
+.mobile .dialogpopup-content iframe{
+	width:100% !important;
+    height:100% !important;
+}
+/* mobile framework 에서 access position fix 이슈 예외 처리 */
+.mobile .access-modal{
+	position:absolute !important;
+}
+/* mobile framework 에서 messagearea position fix 이슈 예외 처리
+.messagearea{
+	position:absolute !important;
+}
+*/
+/* pc 버전에서 access position fix 이슈 예외 처리 */
+div.access-modal{
+	position:absolute !important;
+}
+div.access-deny{
+	position:absolute !important;
+}
+div#messageSlidebar{
+	position:absolute !important;
+}
+/* grid style
+================================== */
+.grid-body-outer-pnl{
+	overflow:auto !important;
+	-webkit-overflow-scrolling:touch !important;
+}

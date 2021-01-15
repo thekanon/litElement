@@ -1,0 +1,318 @@
+@charset "utf-8";/* encoding */
+
+/* Window panel
+================================== */
+/* 최대화 */
+.window-pnl{
+    position:absolute;
+    left:0;
+    top:0;
+    margin:0;
+    padding:0;
+    z-index:2000;
+    color:#222222;
+    text-decoration:none;
+    clear:both;
+    text-align:left;
+    vertical-align:top;
+    overflow:hidden;
+    background:#ffffff;
+}
+/* 최소화 */
+.window-pnl.state-normal{    
+    border:1px solid #B5B5B5; 
+}
+.state-current.window-pnl.state-normal{    
+    border-color:#755a6d; /* transparent */
+    -moz-box-shadow:0 5px 10px rgba(0,0,0,0.1);
+    -webkit-box-shadow:0 5px 10px rgba(0,0,0,0.1);
+    box-shadow:0 5px 10px rgba(0,0,0,0.1);
+	-moz-border-radius:5px 5px 0 0;
+    -webkit-border-radius:5px 5px 0 0;
+    border-radius:5px 5px 0 0;
+}
+.window-title{
+    border:none;   
+    overflow:hidden;
+    border-bottom:1px solid #e1dedc;
+    height:40px;
+    line-height:20px;
+    padding:2px 5px 2px 0;
+    text-align:left;
+    cursor:pointer;
+	background:#e1dedc;
+	box-sizing: border-box;
+}
+.state-normal .window-title{
+    
+}
+.state-current .window-title{
+    border-color:#005aab;
+	background:#005aab;
+}
+.window-title .title-icon{
+    
+}
+.window-title .title-text{
+    color:#463959;
+    font-weight:bold;
+    display:inline-block;
+    width:-webkit-calc(100% - 200px);
+    width:-moz-calc(100% - 200px);
+    width:calc(100% - 200px);
+    top:8px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;	
+	font-size:13px;
+	left:20px;
+}
+.state-current .window-title .title-text{
+    color:#ffffff;
+}
+/* 아이콘버튼 */
+.window-pnl .toolbar-pnl{
+    float:right;
+    right:5px;
+    top:0px;
+}
+.window-pnl .toolbar-pnl span[class^=icon-]{
+	background-image:url(./image/de-icons.png);
+	background-position-y:-350px;
+	background-repeat:no-repeat;
+	width:22px; 
+    height:22px;
+    cursor:pointer;
+    float:left;
+    top:8px;
+}
+.window-pnl.state-current .toolbar-pnl span[class^=icon-]{
+	background-position-y:-328px;
+}
+.window-pnl.state-current .toolbar-pnl span[class^=icon-]:hover{
+    -moz-opacity:.85;
+    opacity:.85;   
+    background-position-y:-161px; 
+}
+.window-pnl.state-current .toolbar-pnl span[class^=icon-].state-current{
+	background-position-y:-444px;
+}
+.window-pnl .toolbar-pnl span[class^=icon-].state-current{
+	background-position-y:-466px;
+}
+/* 화면설명 */
+.icon-scnGuide{
+    background-position-x:0;
+}
+/* 메모 */
+.icon-memo{
+    background-position-x:-22px;
+}
+/* 즐겨찾기 */
+.icon-favorite{
+	background-position-x:-44px;
+}
+/* 프린트 */
+.icon-print{
+	background-position-x:-66px;
+}
+/* 새창열기 */
+.icon-newWin{
+    background-position-x:-88px;
+}
+/* 복원 */
+.icon-maximize{ 
+    background-position-x:-132px;
+}
+/* close */
+.icon-close{ 
+    background-position-x:-154px;
+}
+.icon-close:hover{
+	background-position-y:-161px;
+}
+
+/* Window-content
+================================== */
+.window-content{
+	
+}
+.window-pnl.state-normal .window-content{
+	padding-top:5px;
+}
+.state-normal .window-content{
+    
+}
+.state-normal .window-content.no-footer{
+    border-bottom:2px solid #FF8636;
+} 
+.window-title.state-normal{
+
+}
+.window-frame{
+    position:relative;
+    width:100%;
+    height:100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Window-message
+================================== */
+.window-message{
+    color:#000000;
+    bottom:0;
+    left:0;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    border-top:1px solid #e0e0e0;    
+    height:30px;
+    box-sizing:border-box;
+    background:#e7e7e7;
+}
+/* 창 축소 */
+.window-message.state-normal{
+    background:#e7e7e7;
+    border-top:1px solid #e2e2e2;
+    width:100%;
+}
+.message-pnl{
+    width:100%;
+}
+.message-icon{
+    background:url(./image/de-icons.png) no-repeat -240px -119px;
+    width:20px;
+    height:20px;
+    z-index:3200;
+    position:absolute;
+    left:8px;
+    cursor:pointer;    
+    top:5px;
+}
+.state-current .message-icon{
+	background-position-x:-220px;
+}
+.message-text{
+	font-weight:bold;
+    font-size:1.1em;
+    color:#7c7c7c;
+    overflow:hidden;
+    margin-top:6px;
+    white-space:nowrap;
+    -o-text-overflow:ellipsis;
+    text-overflow:ellipsis;
+    left:35px;
+    float:left;
+    width:-webkit-calc(100% - 50px);
+    width:-moz-calc(100% - 50px);
+    width:calc(100% - 50px);
+}
+.state-current .message-text{
+    color:#3d3d3d;
+}
+.error .message-icon{
+    background-position-x:-260px;
+}
+.error .message-text{
+    color:#cf0d03;
+}
+.alert .message-icon{
+    background-position-x:-280px;
+}
+.alert .message-text{
+    color:#173375;
+}
+.warning .message-icon{
+    background-position-x:-300px;
+}
+.warning .message-text{
+    color:#8d7c19;
+}
+.message-ext-pnl{
+    float:right;
+    width:155px;
+    margin-right:4px;
+}
+.message-ext-pnl .ext-icon{
+	background-image:url(./image/de-icons.png);
+	background-repeat:no-repeat;
+    height:22px;
+    width:22px;
+    margin-right:1px;
+    top:2px;
+    float:right;
+    cursor:pointer;
+} 
+.ext-icon:hover{
+    -moz-opacity:.7;
+    opacity:.7; 
+}
+.ext-icon.state-disabled{
+    background-position-y:-227px;
+    -moz-opacity:.8;
+    opacity:.8;
+}
+.ext-icon.state-disabled:hover{
+    -moz-opacity:.8;
+    opacity:.8; 
+}
+/* 부가메세지 */
+.icon-tradelist{
+    background-position:0 -205px;
+}
+/* 장애등록 */
+.icon-error{
+    background-position:-22px -205px;
+}
+/* 축소 */
+.icon-scaledown{
+     background-position:-44px -205px;
+}
+/* 복원 */
+.icon-scale{
+    background-position:-110px -205px;
+}
+/* 확대 */
+.icon-scaleup{
+    background-position:-66px -205px;
+}
+/* 거래시간 */
+.tradetime{
+    font-size:1.1em;
+    top:7px;
+    right:5px;
+    float:right;
+}
+
+/* frame-loading
+================================== */
+.frame-loading{
+    width:100%; 
+    height:100%;
+    top:0; 
+    left:0; 
+    z-index:9998;
+    position:absolute;
+    background:url(./image/loading.gif) no-repeat center center;
+    background-color:rgba(0,0,0,.5);
+}
+
+/* Overlay
+================================== */
+#window-overlay{
+    opacity:0;
+    width:100%;
+    position:fixed;
+    left:0;
+    top:0;
+}
+
+/* Panel State
+================================== */
+/* 최대화 */
+
+/* 최소화 */
+
+
+

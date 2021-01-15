@@ -1,0 +1,46 @@
+/* Windows Vista Theme 
+=========================== */
+.context-menu-theme-vista{
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+    border-radius:3px;
+	background: #ffffff;
+	border:5px solid #EFEFEF;
+	-moz-box-shadow:1px 1px 3px #cccccc;
+	-webkit-box-shadow:1px 1px 3px #cccccc;
+    box-shadow:1px 1px 3px #cccccc;
+}
+.context-menu-theme-vista .context-menu-item{
+	text-align:left;
+	cursor:pointer;
+	font-family:GulimChe, Arial;
+	font-size:1.1em;
+}
+.context-menu-theme-vista .context-menu-separator{
+	margin:0px 10px;
+	font-size:0px;
+	border-top:1px solid #cacaca;
+	border-bottom:1px solid #f3f3f3;
+}
+.context-menu-theme-vista .context-menu-item:hover{
+	background:#eff1f4;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+    border-radius:10px;
+}
+.context-menu-theme-vista .context-menu-item .context-menu-item-inner{
+	padding:4px 30px 4px 25px;
+	margin-left:1px;
+	color:#7F7F7F;
+	font-weight:bold;
+}
+.context-menu-theme-vista .context-menu-item:hover .context-menu-item-inner{
+	padding:4px 25px 4px 30px;
+	color:#19abbc;
+	font-weight:bold;
+}
+.context-menu-theme-vista .context-menu-item-disabled{
+	color:#A7A7A7;
+}
+
+

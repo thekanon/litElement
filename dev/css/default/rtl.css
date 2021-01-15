@@ -1,0 +1,28 @@
+body {direction:rtl;text-align:right;}
+dl dt, dl dd, .title h1, .caption-pnl h2, .fl,.colgroup-wrap > div[class^=colgroup-] {float: right}
+.fr,.buttonset.fr{float:left;}
+span.buttonset.fr{margin-left:0;margin-right:2px;}
+button + button{margin-left:0 !important;margin-right:2px !important;}
+.title h1 {background-image:url("./image/right-title-icon1.png");background-position:right center;padding:0 8px 0 0;margin-right:17px;margin-left:0;}
+.title.bread h1{display:block;background-image:url("./image/right-title-icon2.png");background-position:right center;padding:0 8px 0 0;margin-right:17px;margin-left:0;}
+.caption-pnl h2{direction:rtl;}
+.caption-pnl span.x-icon {left:auto;right:3px;}
+.caption-pnl span.x-label {margin-left:0;margin-right:40px;}
+table td, input[type="text"], input[type="password"] {text-align:right;}
+
+/* treeview css */
+.treeview-pnl input[type="checkbox"] {margin-left: 0px;margin-right: 3px;}
+.treeview-pnl span {right:3px;}
+.treeview-pnl ul {left:0;right:9px;}
+.treeview-pnl #root {right:-9px;}
+.treeview-pnl li,.treeview-pnl li.last {background-position:right top;right:0;}
+.treeview-pnl li{background-image: url("./image/right-treeview-line.png");}
+.treeview-pnl li.last {background-image: url("./image/right-treeview-bottom.png");}
+.treeview-pnl button.plus{background-image: url("./image/right-treeview-plus.png");}
+.treeview-pnl button.plus-bottom {background-image: url("./image/right-treeview-plusbottom.png");}
+.treeview-pnl button.minus {background-image: url("./image/right-treeview-minus.png");}
+.treeview-pnl button.minus-bottom {background-image: url("./image/right-treeview-minusbottom.png");}
+
+/* tab css */
+.tab-header ul > li {float:right;}
+.tab-header li.state-current span, .tab-header span {margin-right:0;margin-left:1px;}

@@ -1,0 +1,122 @@
+/* encoding
+==================================*/
+@charset "utf-8";
+
+/* default */
+#wrap {
+	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+	box-shadow:none;
+}
+.dolink {
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+    box-shadow:none;
+}
+.dosubmit {
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+     box-shadow:none;
+}
+.doclose {
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+     box-shadow:none;
+}
+.title {
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+    box-shadow:none;
+}
+.search {
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+    box-shadow:none;
+}
+#footer .dolink {
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+    box-shadow:none;
+}
+#footer .dosubmit {
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+     box-shadow:none;
+}
+.tooltip {
+    -moz-box-shadow:none;
+	-webkit-box-shadow:none;
+    box-shadow:none;
+}
+#messageSlidebar {
+    -moz-box-shadow:none;
+	-webkit-box-shadow:none;
+    box-shadow:none;
+}
+/*  theme 1 */
+input[type=text] {
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+	box-shadow:none;
+}
+textarea {
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+	box-shadow:none;
+}
+.caption-pnl {
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+	box-shadow:none;
+}
+.state-error-required {
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+	box-shadow:none;
+}
+
+/* flicking style
+==================================*/
+.carouselwrap {
+	overflow:hidden;
+}
+.scroller {
+	float:left;
+}
+.scroller .container {
+	float:left;
+}
+.scroller:after, .scroller .container:after {
+	content: "";
+	display: block;
+	height: 0;
+	clear:both;
+	visibility: hidden;
+}
+.indicator {
+	display:block;
+	width:100%;
+	margin:10px 0 5px;
+}	
+.indicator ul {
+	list-style:none;
+	display:block;
+	width:10%;	
+	height:1em;
+	margin:0 auto;
+}
+.indicator li {
+	display:block;
+	width:1em;
+	height:1em;
+	margin-right:0.5em;
+	float:left;
+	background-color:#999;
+	border-radius:50%;
+}
+.indicator li.active {
+	background-color:#333;
+}
+.indicator li > span {
+	display:none;
+} 

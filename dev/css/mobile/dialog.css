@@ -1,0 +1,227 @@
+.dialog, .messagebox{
+    position:absolute;
+	font-size:12px;
+	overflow:hidden; 
+	-moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+	border:solid 1px #9E9E9E;
+	outline:0;
+	background:#ffffff;
+}
+/* title all */
+.dialog-titlebar{
+    position:relative; 
+	height:35px;
+	background:#0656a1;
+	background:#3685ce;
+}
+/* title font */
+.dialog-title{  
+    float:left;
+	color:#ffffff;
+	cursor: pointer;
+	font-weight:bold;
+	top:9px;
+	left:35px;
+	display:block;
+	background:none !important;
+} 
+.dialog-titlebar span[class^=dialog-icon-], .dialog-titlebar span[class^=dialog-titlebar-image]{
+	height:20px;
+	width:20px;
+	background-image:url(./image/de-icons.png);
+	background-repeat:no-repeat;
+	background-position-y:-119px;
+	display:block;
+	position:absolute;
+	overflow:hidden;
+	font-size:12px;
+	top:6px;
+}
+.dialog-icon-close{
+	background-position:-154px -328px !important;
+    right:10px;
+    cursor: pointer;
+}
+.dialog-icon-close:hover{
+
+}
+.dialog-titlebar-close:hover, .dialog .dialog-titlebar-close:focus { 
+    padding:0; 
+}
+.dialog-icon-information{
+	background-position-x:0;
+	left:10px;
+}
+.dialog-icon-alert{
+	background-position-x:-20px;
+	left:10px;
+}
+.dialog-icon-confirm{
+	background-position-x:-60px;
+	left:10px;
+}
+.dialog-icon-message{
+	height:23px;
+	background-image:url(./image/icons.png);
+	background-repeat:no-repeat;
+	display:block;
+	position:absolute;
+	overflow:hidden;
+}
+.dialog-icon-message-information{
+	background-position:-108px -28px ;
+	left:10px;
+	width:23px;
+}
+.dialog-icon-message-error{
+	background-position:-131px -28px;
+	left:10px;
+	width:23px;
+}
+.dialog-icon-message-alert{
+	background-position:-154px -28px;
+	left:10px;
+	width:23px;
+}
+.dialog-icon-message-warning{
+	background-position:-177px -28px ;
+	left:10px;
+	width:23px;
+}
+.dialog-content/* content all */{
+    position:relative; 
+	overflow:auto; 
+	text-align:center;
+	color:#585858;
+	padding:5px;
+	background:#ffffff;
+    border-bottom:none;
+}
+.dialog-content > p.message{
+	padding:0;
+	margin:0;
+	border:none;
+	background:none;
+	-moz-box-shadow:none;
+    -webkit-box-shadow:none;
+    box-shadow:none;
+}
+.dialog-content em{
+    color:#fa5151;
+    font-weight:bold;
+    font-style:normal;
+}
+.dialog-buttonpane/* button all */{
+	height:33px;
+    text-align:right; 
+    background:#ffffff;
+	margin:5px 10px;
+    border-top:none;
+    -moz-border-radius:0 0 5px 5px;
+	-webkit-border-radius:0 0 5px 5px;
+	border-radius:0 0 5px 5px;
+}
+.dialog-buttonpane .dialog-buttonset{
+
+}
+.dialog-buttonpane button{ 
+    
+}
+.dialog-buttonpane button:hover{ 
+   
+}
+.resizable-se{ 
+    width:11px;
+	height:11px;
+	right:0px;
+	bottom:0px; 
+	z-index:999;
+	position:absolute;
+	cursor:se-resize;
+	background:url(./image/dialog-resize.png) no-repeat right bottom ;
+}
+.draggable .dialog-titlebar{ 
+    cursor:move;
+}
+.resizable{ 
+	position:relative;
+}
+.resizable-n{
+	position:absolute;
+	font-size:0.1px;
+	z-index:99999; 
+	display:block;
+	cursor:n-resize; 
+	height:7px;
+	width:100%; 
+	top:-5px; 
+	left:0; 
+}
+.resizable-s{ 
+	position:absolute;
+	font-size:0.1px;
+	z-index:99999; 
+	display:block; 
+	cursor:s-resize; 
+	height:7px; 
+	width:100%; 
+	bottom:-5px; 
+	left:0;
+}
+.resizable-e{ 
+	position:absolute;
+	font-size:0.1px;
+	z-index:99999; 
+	display:block; 
+	cursor:e-resize; 
+	width:7px; 
+	right:-5px; 
+	top:0; 
+	height:100%;
+}
+.resizable-w{ 
+	position:absolute;
+	font-size:0.1px;
+	z-index:99999; 
+	display:block; 
+	cursor:w-resize; 
+	width:7px; 
+	left:-5px; 
+	top:0; 
+	height:100%; 
+}
+.resizable-se{ 
+	position:absolute;
+	font-size:0.1px;
+	z-index:99999; 
+	display:block; 
+	cursor:se-resize; 
+	width:12px; 
+	height:12px; 
+	right:1px; 
+	bottom:1px; 
+}
+.dialog-access-deny{
+	background:#000000;
+	opacity:0.5;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	zIndex:6000;
+	position:fixed;
+	display:block;
+}
+.messagebox-access-deny{
+	background:#000000;
+	opacity:0.5;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	zIndex:7000;
+	position:fixed;
+	display:block;
+}

@@ -1,0 +1,291 @@
+/* 
+ * jQuery UI Dialog 1.8.7
+ *
+ * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Dialog#theming
+ */
+.dialog, .messagebox{
+    position:absolute;
+	font-size:1.1em;
+	overflow:hidden; 
+	border:solid 1px #81786f;
+	outline:0;
+}
+.dialog-titlebar/* title all */{
+    position:relative; 
+	height:28px;
+	background:#7a99ac;
+}
+.dialog-title/* title font */{  
+    float:left;
+	color:#fff;
+	/* text-shadow:1px 1px 0 #E1E1E1; */
+	cursor: pointer;
+	font-weight:bold;
+	top:6px;
+	left:25px;
+	display:block;
+	background:none !important;
+} 
+.dialog-titlebar span{
+	height:20px;
+	background-image:url(./image/de-icons.png);
+	background-repeat:no-repeat;
+	display:block;
+	position:absolute;
+	overflow:hidden;
+	font-size:1em;
+}
+.dialog-icon-close{
+	background-position:-155px -306px !important;
+	top:2px;
+    right:5px;
+	width:20px;
+	height:20px;
+	cursor:pointer;
+	position:absolute;
+	-moz-opacity:.5;
+	opacity:.5;
+}
+.dialog-icon-close:hover{
+-moz-opacity:1.0;
+opacity:1.0;
+}
+.dialog-icon-min{
+	background-position:-112px -139px !important;
+	top:4px;
+    right:28px;
+	width:20px;
+	height:20px;
+	cursor:pointer;
+	position:absolute;
+}
+.dialog-icon-min:hover{
+	background-position:-112px -139px !important;
+}
+.dialog-titlebar-close:hover, .dialog .dialog-titlebar-close:focus { 
+    padding:0; 
+}
+.dialog-icon-information{
+	background-position:-209px -104px;
+	left:5px;
+	width:16px;
+	height:15px !important;
+	top:5px;
+}
+.dialog-icon-alert{
+	background-position:-40px -116px;
+	left:5px;
+	width:20px;
+}
+.dialog-icon-confirm{
+	background-position:-209px -104px;
+	left:5px;
+	width:20px;
+}
+.dialog-icon-message{
+	height:15px !important;
+	background-image:url(./image/de-icons.png);
+	background-repeat:no-repeat;
+	display:block;
+	position:absolute;
+	overflow:hidden;
+}
+.dialog-icon-message-information{
+	background-position:-108px -28px ;
+	left:10px;
+	width:23px;
+}
+.dialog-icon-message-error{
+	background-position:-20px -116px;
+	left:5px;
+	width:20px;
+}
+.dialog-icon-message-alert{
+	background-position:-40px -116px;
+	left:5px;
+	width:20px;
+}
+.dialog-icon-message-warning{
+	background-position:-60px -116px;
+	left:5px;
+	width:20px;
+}
+.dialog-content/* content all */{
+    position:relative; 
+	overflow:auto; 
+	text-align:center;
+	color:#585858;
+	padding:5px;
+	/* margin:5px 5px;
+	-moz-border-radius:5px 5px 0 0;
+	-webkit-border-radius:5px 5px 0 0;
+	border-radius:5px 5px 0 0; */
+	background:#ffffff;
+	/* border:1px dashed #B7B7B7; */
+    border-bottom:none;
+	/* -moz-box-shadow:0 0 1px #f0f0f0;
+    -webkit-box-shadow:0 0 1px #f0f0f0;
+    box-shadow:0 0 1px #f0f0f0; */
+}
+.dialog-content > p.message{
+	padding:0;
+	margin:0;
+	border:none;
+	background:none;
+	-moz-box-shadow:none;
+    -webkit-box-shadow:none;
+    box-shadow:none;
+}
+.dialog-content em{
+    color:#fa5151;
+    font-weight:bold;
+    font-style:normal;
+}
+.dialog-buttonpane/* button all */{
+	height:20px;
+    text-align:right; 
+    background:#ffffff;
+	/* margin:0 2px; */
+	padding: 3px 8px;
+    border-top:none;
+    -moz-border-radius:0 0 5px 5px;
+	-webkit-border-radius:0 0 5px 5px;
+	border-radius:0 0 5px 5px;
+}
+.dialog-buttonpane .dialog-buttonset{
+    /* text-align:center; */
+}
+.dialog-buttonpane button{ 
+    /* color:#ffffff;
+	font-size:1em;
+	padding:0.1em 0.4em 0 0.35em;
+	text-shadow:0 0 2px #666666;
+	font-weight:bold;
+	border:solid 1px #479dd9;
+	background:#479dd9 url(./image/bt-bg.png) repeat-x 0 0;
+	-moz-box-shadow:0 1px 2px #b2b2b2;
+	-webkit-box-shadow:0 1px 2px #b2b2b2;
+    box-shadow:0 1px 2px #b2b2b2;
+	height:1.9em;
+	margin:5px 0; */
+}
+.dialog-buttonpane button:hover{ 
+    /* color:#479dd9;
+	background:#eeeded;
+	background:-webkit-linear-gradient(top, #ffffff 0%, #ebebeb 100%); 
+	background:-moz-linear-gradient(top, #ffffff 0%, #ebebeb 100%); 
+	background:-ms-linear-gradient(top, #ffffff 0%, #ebebeb 100%);  
+	background:-o-linear-gradient(top, #ffffff 0%, #ebebeb 100%); 
+	background:linear-gradient(to bottom, #ffffff 0%, #ebebeb 100%);
+   	border:solid 1px #3a9dc5;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	text-shadow:none; */
+}
+.resizable-se{ 
+    width:11px;
+	height:11px;
+	right:0px;
+	bottom:0px; 
+	z-index:999;
+	position:absolute;
+	cursor:se-resize;
+	background:url(./image/dialog-resize.png) no-repeat right bottom ;
+}
+.draggable .dialog-titlebar{ 
+    cursor:move;
+}
+/* 
+ * jQuery UI Resizable 1.8.7
+ *
+ * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Resizable#theming
+ */
+.resizable{ 
+	position:relative;
+}
+.resizable-n{
+	position:absolute;
+	font-size:0.1px;
+	z-index:99999; 
+	display:block;
+	cursor:n-resize; 
+	height:7px;
+	width:100%; 
+	top:-5px; 
+	left:0; 
+}
+.resizable-s{ 
+	position:absolute;
+	font-size:0.1px;
+	z-index:99999; 
+	display:block; 
+	cursor:s-resize; 
+	height:7px; 
+	width:100%; 
+	bottom:-5px; 
+	left:0;
+}
+.resizable-e{ 
+	position:absolute;
+	font-size:0.1px;
+	z-index:99999; 
+	display:block; 
+	cursor:e-resize; 
+	width:7px; 
+	right:-5px; 
+	top:0; 
+	height:100%;
+}
+.resizable-w{ 
+	position:absolute;
+	font-size:0.1px;
+	z-index:99999; 
+	display:block; 
+	cursor:w-resize; 
+	width:7px; 
+	left:-5px; 
+	top:0; 
+	height:100%; 
+}
+.resizable-se{ 
+	position:absolute;
+	font-size:0.1px;
+	z-index:99999; 
+	display:block; 
+	cursor:se-resize; 
+	width:12px; 
+	height:12px; 
+	right:1px; 
+	bottom:1px; 
+}
+.dialog-access-deny{
+	background:#000000;
+	opacity: 0.5;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	zIndex:6000;
+	position:fixed;
+	display:block;
+}
+.messagebox-access-deny{
+	background:#000000;
+	opacity: 0.5;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	zIndex:7000;
+	position:fixed;
+	display:block;
+}
