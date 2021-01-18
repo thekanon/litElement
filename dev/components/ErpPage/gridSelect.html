@@ -20,7 +20,6 @@
         <title>그리드 단건 및 다건선택</title>  
 <script type="module">
 import {LitElement, html} from '../../../node_modules/lit-element/lit-element.js'
-// node_modules/lit-element/lit-element.js';
 import '../../../dev/components/litGrid.js';
 import '../../../dev/components/buttonSet.js';
 import '../../../dev/components/searchTable.js';
@@ -28,22 +27,13 @@ class MyElement extends LitElement {
 
   static get properties() {
     return {
-      /**
-       * The name to say "Hello" to.
-       */
-      name: {type: String},
-
-      /**
-       * The number of times the button has been clicked.
-       */
-      count: {type: Number},
+      screenID: {type: String},
     };
   }
 
   constructor() {
     super();
-    this.name = 'NCRM';
-    this.count = 0;
+    this.screenID = 'ncrm001';
     this.data = [{"first_name":"Brendin","last_name":"Hegdonne","email":"bhegdonne0@cafepress.com","gender":"Male","ip_address":"142.101.100.170"},
                 {"first_name":"Bailie","last_name":"Renhard","email":"brenhard1@vimeo.com","gender":"Male","ip_address":"18.121.110.122"},
                 {"first_name":"Amandy","last_name":"Blair","email":"ablair2@newyorker.com","gender":"Female","ip_address":"230.214.198.165"},
@@ -58,8 +48,7 @@ class MyElement extends LitElement {
     this.data2 = [{"chkYn":"1","Column1":"홍길동", "Column2":"19830101", "Column3":"회사원", "Column4":"100"},
                     {"chkYn":"2","Column1":"김길동", "Column2":"19800101", "Column3":"자영업", "Column4":"20000"},
                     {"chkYn":"1","Column1":"박길동", "Column2":"19900101", "Column3":"대학생", "Column4":"50"},
-                    {"chkYn":"1","Column1":"한길동", "Column2":"20011113", "Column3":"학생"  , "Column4":"300"}],
-    this.sampleDataString = '';
+                    {"chkYn":"1","Column1":"한길동", "Column2":"20011113", "Column3":"학생"  , "Column4":"300"}];
   }
   render() {
     return html`

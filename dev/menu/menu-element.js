@@ -1,5 +1,5 @@
-import {LitElement, html, css} from '../node_modules/lit-element/lit-element.js';
-import '../dev/components/litGrid.js';
+import {LitElement, html, css} from '../../node_modules/lit-element/lit-element.js';
+import '../../dev/components/litGrid.js';
 
 import {Menu} from './menu.js'
 const menu = new Menu()

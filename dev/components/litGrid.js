@@ -13,20 +13,20 @@ class MyElement extends LitElement {
     return this._bindRef
   }
   set bindRef(val) {
-      let oldVal = this._bindRef;
+      // console.log("set")
       this._bindRef = val;
-      this.requestUpdate('bindRef', oldVal);
+      this.requestUpdate();
       this.makeGrid()
   }
   attributeChangedCallback(name, old, value) {
-    console.log("attributeChangedCallback")
+    // console.log("attributeChangedCallback")
     if (old !== value) {
         this._attributeToProperty(name, value);
     }
   }
   connectedCallback() {
     super.connectedCallback()
-    console.log("connectedCallback")
+    // console.log("connectedCallback")
 
     //상위 컴포넌트의 데이터를 가져옴.
     this.makeGrid();
@@ -56,8 +56,7 @@ class MyElement extends LitElement {
 
   }
   updated() {
-    console.log(this.flag)
-    console.log(this.bindRef)
+    // console.log(this.bindRef)
   }
   render() {
     return html`
