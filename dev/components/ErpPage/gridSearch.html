@@ -11,26 +11,23 @@ import '../../../dev/components/searchTable.js';
 class MyElement extends LitElement {
     static get properties() {
         return {
-            name: {type: String},
-            count: {type: Number},
-            data: {type:Object, reflect: true},
-            data2: {type:Object, reflect: true},
-            array:{type:Array, reflect: true},
+          name: {type: String},
+          count: {type: Number},
+          data: {type:Object, reflect: true},
+          data2: {type:Object, reflect: true},
+          array:{type:Array, reflect: true},
         };
     }
     attributeChangedCallback(name, oldVal, newVal) {
-        // console.log('attribute change: ', name, newVal);
-        super.attributeChangedCallback(name, oldVal, newVal);
+      // console.log('attribute change: ', name, newVal);
+      super.attributeChangedCallback(name, oldVal, newVal);
     }
     updated(changedProperties) {
-        // console.log(changedProperties)
+      // console.log(changedProperties)
     }
 
     constructor() {
         super();
-        this.name = 'NCRM';
-        this.array = [1,2,3,4,5]
-        this.count = 0;
         this.data = [{"first_name":"Brendin","last_name":"Hegdonne","email":"bhegdonne0@cafepress.com","gender":"Male","ip_address":"142.101.100.170"},
                     {"first_name":"Bailie","last_name":"Renhard","email":"brenhard1@vimeo.com","gender":"Male","ip_address":"18.121.110.122"},
                     {"first_name":"Amandy","last_name":"Blair","email":"ablair2@newyorker.com","gender":"Female","ip_address":"230.214.198.165"},
@@ -43,45 +40,50 @@ class MyElement extends LitElement {
                     {"first_name":"Liliane","last_name":"O'Corrane","email":"locorrane9@guardian.co.uk","gender":"Female","ip_address":"94.38.74.50"}];
 
         this.data2 = [{"chkYn":"1","Column1":"홍길동", "Column2":"19830101", "Column3":"회사원", "Column4":"100"},
-                      {"chkYn":"2","Column1":"김길동", "Column2":"19800101", "Column3":"자영업", "Column4":"20000"},
-                      {"chkYn":"1","Column1":"박길동", "Column2":"19900101", "Column3":"대학생", "Column4":"50"},
+                      {"chkYn":"2","Column1":"김길동", "Column2":"19800101", "Column3":"학생", "Column4":"20000"},
+                      {"chkYn":"1","Column1":"박길동", "Column2":"19900101", "Column3":"회사원", "Column4":"50"},
                       {"chkYn":"1","Column1":"한길동", "Column2":"20011113", "Column3":"학생"  , "Column4":"300"}];
-  }
-  render() {
-    return html`
-    <link rel="stylesheet" href="../../css/default/common-4.x.css" type="text/css">
-    <header>
-      <div class="title">
-          <h3>그리드 단건 및 다건선택</h1>
-      </div>
-      <search-table></search-table>
-  </header>
-  <main id="content">
-    <section id="grid00">
-      <button-set .click="${this.clickEvent}"></button-set>
-      <button @click="${this.setData}">click</button>
-      ${this.array.length}
-      <lit-grid
-        id="litGrd001"
-        .bindRef="${this.data}"
-        flag='no-footer'
-        type='link'
-      />
-    </section>
-    <section id="grid00">
-      <button-set></button-set>
+        
 
-      <lit-grid
-        .bindRef="${this.data2}"
-      />
-    </section>
-  </main>
-    `;
+        this.orgData = this.data2
+        this.buttonSet01 = {
+          label : "행추가",
+          button01Click:this.buttonAddRow
+        }
+        this.buttonSet02 = {
+          label : "행삭제",
+          button02Click:this.buttonDelRow
+        }
+        this.buttonSet03 = {
+          label : "필터",
+          button01Click:this.buttonFilter
+        }
+        this.buttonSet04 = {
+          label : "필터해제",
+          button02Click:this.buttonReset
+        }
   }
-  clickEvent(event){
-    console.log("111");
-    // data[0]["first_name"]+=1;
-    // data = [...this.data];
+  buttonAddRow(event,parentData){
+    let data = parentData.data
+    data.push({"first_name":"Bailie","last_name":"Renhard","email":"brenhard1@vimeo.com","gender":"Male","ip_address":"18.121.110.122"});
+    parentData.data = [...data];
+  }
+  buttonDelRow(event,parentData){
+    let data = parentData.data;
+    data.pop();
+    parentData.data = [...data];
+  }
+  buttonFilter(event,parentData){
+    let data = parentData.data2;
+    data = data.filter( element=>{
+      if(element.Column3 == "회사원"){
+        return true;
+      }
+    });
+    parentData.data2 = [...data];
+  }
+  buttonReset(event,parentData){
+    parentData.data2 = [...parentData.orgData];
   }
   setData () {
     //setObject
@@ -93,6 +95,45 @@ class MyElement extends LitElement {
 
     //setArray
     this.array = [...this.array, 1]
+  }  
+  render() {
+  return html`
+  <link rel="stylesheet" href="../../css/default/common-4.x.css" type="text/css">
+  <header>
+    <div class="title">
+        <h3>컴포넌트를 이용한 화면 개발</h1>
+    </div>
+    <search-table>
+      <input value="0" name="rdoUseYn" id="rdoUseYn0">
+    </search-table>
+  </header>
+  <main id="content">
+    <section id="grid00">
+      <button-set 
+        label="그리드 행추가 / 행삭제"
+        .button01="${this.buttonSet01}" 
+        .button02="${this.buttonSet02}" 
+        .parentWindow="${this}"
+      >
+      </button-set>
+      <lit-grid
+        .bindRef="${this.data}"
+        flag='no-footer'
+      />
+    </section>
+    <section id="grid01">
+      <button-set
+        label="그리드 데이터 필터링"
+        .button01="${this.buttonSet03}" 
+        .button02="${this.buttonSet04}" 
+        .parentWindow="${this}"
+      ></button-set>
+      <lit-grid
+        .bindRef="${this.data2}"
+      />
+    </section>
+  </main>
+    `;
   }
 }
 customElements.define('my-element', MyElement);

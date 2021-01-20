@@ -3,7 +3,14 @@ import {LitElement, html} from '../../node_modules/lit-element/lit-element.js';
 class MyElement extends LitElement {
   static get properties() {
     return {
-      click: {type:Object}
+      label:{type:String},
+
+      button01: {type:Object},
+      button02: {type:Object},
+      button03: {type:Object},
+      button04: {type:Object},
+
+      parentWindow: {type:Object}
     };
   }
   constructor() {
@@ -15,34 +22,49 @@ class MyElement extends LitElement {
   }
   connectedCallback() {
     super.connectedCallback()
-    console.log("connectedCallback111")
   }
   clickEvent01(event){
-    console.log(event);
-    this.click(event)
+    this.button01.button01Click(event,this.parentWindow)
   }
-  clickEvent02(){
-    this.click()
+  clickEvent02(event){
+    this.button02.button02Click(event,this.parentWindow)
   }
-  clickEvent03(){
-    this.click()
+  clickEvent03(event){
+    this.button03.button03Click(event,this.parentWindow)
   }
-  clickEvent03(){
-    this.click()    
+  clickEvent04(event){
+    this.button04.button04Click(event,this.parentWindow)
   }
   render() {
     return html`
       <link rel="stylesheet" href="../../css/default/common-4.x.css" type="text/css">
       <div class="caption-pnl">
-          <h2>
-              <span class="x-icon"></span>
-              <span class="x-label">그리드 다건 선택 - checkbox &amp; sort</span>
-          </h2>
+          ${this.label 
+            ? html`
+            <h2>
+                <span class="x-icon"></span>
+                <span class="x-label">${this.label}</span>
+            </h2>
+            `
+            : html``
+          }
           <span class="buttonset fr">
-              <button @click="${this.clickEvent01}" class="doaction" id="btnRowAdd">행추가</button>
-              <button @click="${this.clickEvent02}" class="doaction" id="btnRowDel">행삭제</button>
-              <button @click="${this.clickEvent03}" type="button" class="doaction" id="btnFilter">필터</button>
-              <button @click="${this.clickEvent04}" type="button" class="doaction" id="btnFilterClear">필터해제</button>
+          ${this.button01 
+            ? html` <button @click="${this.clickEvent01}" class="doaction" id="btnRowAdd">${this.button01.label}</button>`
+            : html``
+          }
+          ${this.button02
+            ? html` <button @click="${this.clickEvent02}" class="doaction" id="btnRowDel">${this.button02.label}</button>`
+            : html``
+          }
+          ${this.button03 
+            ? html` <button @click="${this.clickEvent03}" class="doaction" id="btnFilter">${this.button03.label}</button>`
+            : html``
+          }
+          ${this.button04 
+            ? html` <button @click="${this.clickEvent04}" class="doaction" id="btnReset">${this.button04.label}</button>`
+            : html``
+          }
           </span>
       </div>
         `
