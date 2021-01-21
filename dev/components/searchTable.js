@@ -1,12 +1,12 @@
-import {LitElement, html} from '../../node_modules/lit-element/lit-element.js';
+import { LitElement, html } from '../../node_modules/lit-element/lit-element.js';
 
 class MyElement extends LitElement {
-  render() {
-    return html`
+    render() {
+        return html `
       <link rel="stylesheet" href="../../css/default/common-4.x.css" type="text/css">
       <div class="search" tabindex="0">
           <table>
-              <colgroup>
+              <colgroup> 
                   <col width="15%">
                   <col width="*">
               </colgroup>
@@ -32,7 +32,7 @@ class MyElement extends LitElement {
       </div>
 
         `
-  }
+    }
 }
 
 customElements.define('search-table', MyElement);
