@@ -1,6 +1,9 @@
 import { LitElement, html, css } from '../../node_modules/lit-element/lit-element.js';
 
 class MyElement extends LitElement {
+    test = `* {
+      color: red !important;
+    }`;
     static get styles() {
         // Write styles in standard CSS
         return css `
@@ -10,6 +13,7 @@ class MyElement extends LitElement {
 
       :host {
         font-family: 'Noto Sans KR';
+        -webkit-user-select: none; 
       }
 
       :host table {
@@ -33,7 +37,7 @@ class MyElement extends LitElement {
         text-shadow:none;
       }
 
-      :host table tr td:not(:last-child){
+      :host table tr td:not(:last-child),:host table tfoot th:not(:last-child){
         border-right: 1px solid #c7c7c7;
       }
 
@@ -41,10 +45,16 @@ class MyElement extends LitElement {
         border-bottom: 1px solid #c7c7c7;
       }
 
+      :host table tfoot th{
+        border-top: 2px solid black;
+        padding: 5px 0px;
+      }
+
       .mytitle {
+        text-align: left;
         border-top: 4px solid black;
-        font-size: 1.3rem;
-        padding: 10px 10px;
+        font-size: 1.2rem;
+        padding: 12px;
         border-bottom: 2px solid black;
       }
 
@@ -54,6 +64,10 @@ class MyElement extends LitElement {
         text-align: left;
         font-weight: 400;
         font-size: 1rem;
+      }
+
+      .grid-container{
+        padding:0px 30px;
       }
     `;
     }
@@ -108,31 +122,33 @@ class MyElement extends LitElement {
     }
     render() {
             return html `
-        ${this.json.length !=0 
-        ? html`<table id="example" class="display" style="width:100%">
-          <thead >
-              <tr>
-                ${Object.keys(this.json[0]).map((element) => html`<th class="mytitle">${element}</th>`)}
-              </tr>
-          </thead>
-          <tbody>
-              ${this.body}
-          </tbody>
-        ${this.flag && this.flag.indexOf('no-footer')!=-1
-            ? html`<tfoot></tfoot>`
-            : html ` 
-            <tfoot>
-                <tr>
-                    <th>footer</th>
-                    <th>footer</th>
-                    <th>footer</th>
-                    <th>footer</th>
-                    <th>footer</th>
-                </tr>
-            </tfoot>`}
-        </table>`
-        : html`<table></table>`
-        }
+            <div class='grid-container'>
+              ${this.json.length !=0 
+              ? html`<table id="example" class="display" style="width:100%">
+                <thead >
+                    <tr>
+                      ${Object.keys(this.json[0]).map((element) => html`<th class="mytitle">${element}</th>`)}
+                    </tr>
+                </thead>
+                <tbody>
+                    ${this.body}
+                </tbody>
+              ${this.flag && this.flag.indexOf('no-footer')!=-1
+                  ? html`<tfoot></tfoot>`
+                  : html ` 
+                  <tfoot>
+                      <tr>
+                          <th>footer</th>
+                          <th>footer</th>
+                          <th>footer</th>
+                          <th>footer</th>
+                          <th>footer</th>
+                      </tr>
+                  </tfoot>`}
+              </table>`
+              : html`<table></table>`
+              }
+          </div>
         `
   }
   makeGrid() {

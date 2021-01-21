@@ -20,6 +20,7 @@ export class MyElement extends LitElement {
         font-size: 3.5em;
         margin-bottom: 32px;
         color: #2d2d2d;
+        -webkit-user-select: none; 
       }
     `;
     }

@@ -6,13 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script type="module">
-        import {
-            LitElement,
-            html,
-            css
-        } from '../../../node_modules/lit-element/lit-element.js'
+        import {LitElement,html,css} from '../../../node_modules/lit-element/lit-element.js'
+        import "../ramWidget/ram_tab.js"
 
         class MyElement extends LitElement {
+            tabName=[1,2,3,4,5,6];
             static get properties() {
                 return {
                 };
@@ -22,18 +20,66 @@
             }
 
             static get styles() {
-                return css ``;
+                return css `
+                .ram-widget-background{
+                    display:inline-block;
+                    width:100%;
+                    height:920px;
+                    background:#efefef;
+                    text-align: center;
+                }
+
+                .ram-widget-container{
+                    display: inline-block;
+                    width: 950px;
+                    height: 580px;
+                    background: white;
+                    border: 1px solid rgb(206, 206, 206);
+                    margin-top: 30px;
+                }
+
+                :host h1{
+                    color: rgb(14, 14, 14);
+                    margin: 79px 0px 30px;
+                    font-size: 6.4em;
+                    font-family: Staatliches;
+                    -webkit-user-select: none; 
+                    background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent; 
+                    transition: 0.7s;
+                    display:inline-block;
+                    background-size:200%;
+                }
+
+                :host h1:hover{
+                    background-position-x: 100%;
+                }
+                `;
             }
 
             render() {
-                return html `<div>testasdasd</div>`;
+                return html `<div class='ram-widget-background'>
+                    <h1>ram-widget-test</h1>
+                    <div class='ram-widget-container'>
+                    <ram-tab .tabName="${this.tabName}">
+                        ${this.tabName.map(data=>{
+                            return html`<span slot =${data}>${data}</span>`
+                        })}
+                    </ram-tab>
+                    </div>
+                    </div>`;
             }
         }
 
-        customElements.define('test-element', MyElement);
+        customElements.define('ram-widget-page', MyElement);
     </script>
 </head>
-55<body>
-    <test-element />
+<body>
+    <ram-widget-page />
 </body>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Staatliches&family=Pirata+One&family=Do+Hyeon&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+</style>
 </html>
