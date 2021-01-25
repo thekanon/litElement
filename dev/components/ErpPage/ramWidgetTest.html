@@ -7,17 +7,25 @@
     <title>Document</title>
     <script type="module">
         import {LitElement,html,css} from '../../../node_modules/lit-element/lit-element.js'
-        import "../ramWidget/ramTab.js"
+        import "../ramWidget/tab/ramTab.js"
         import "../ramWidget/ramWidgetSample.js"
 
         class MyElement extends LitElement {
             tabName=[1,2,3,4,5,6];
             static get properties() {
                 return {
+                    componentList:{type:Array},
                 };
             }
             constructor() {
                 super();
+                this.componentList=[
+                    'ram-input',
+                    'ram-select',
+                    'ram-tab',
+                    'ram-button',
+                    'ram-search',
+                ]
             }
 
             static get styles() {
@@ -34,7 +42,7 @@
                 }
 
                 .ram-container{
-                    width:90%;
+                    width:1800px;
                     min-width: 1700px;
                     margin-top: 130px;
                 }
@@ -92,11 +100,29 @@
                     height: 23px;
                     width: 81%;
                 }
+
+                .test{
+                    width:50px;
+                    height:50px;
+                    background:red;
+                    margin-top:50px;
+                }
+
+                .t{
+                    background:blue;
+                    width:100px;
+                    height:200px;
+                }
                 `;
+            }
+
+            test = () =>{
+                console.log(this);
             }
 
             render() {
                 return html `<div class='ram-widget-background'>
+                    <span><a href='../../index.html'>메인메뉴로 돌아가기 임시</a><span>
                     <div class='ram-container'>
                         <div class='ram-widget-left'>
                             <h1>ram-widget-test</h1>
@@ -104,37 +130,9 @@
                                 <h6>select Widget</h6>
                             </div>
                             <div class='ram-widget-container'>
-                                <ram-widget-sample widgetNm='ram-input'>
-                                    <input type='text'/>
-                                </ram-widget-sample>
-                                <ram-widget-sample widgetNm='ram-select'>
-                                    <select>
-                                        <option value="0">0</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                    </select>
-                                </ram-widget-sample>
-                                <ram-widget-sample widgetNm='ram-input'>
-                                    <button>asdf</button>
-                                </ram-widget-sample>
-                                <ram-widget-sample widgetNm='ram-test1'>
-                                    <input type='text'/>
-                                </ram-widget-sample>
-                                <ram-widget-sample widgetNm='ram-test2'>
-                                    <input type='text'/>
-                                </ram-widget-sample>
-                                <ram-widget-sample widgetNm='ram-test3'>
-                                    <input type='text'/>
-                                </ram-widget-sample>
-                                <ram-widget-sample widgetNm='ram-test4'>
-                                    <input type='text'/>
-                                </ram-widget-sample>
-                                <ram-widget-sample widgetNm='ram-test5'>
-                                    <input type='text'/>
-                                </ram-widget-sample>
-                                <ram-widget-sample widgetNm='ram-test6'>
-                                    <input type='text'/>
-                                </ram-widget-sample>
+                                ${this.componentList.map(com=>{
+                                    return html `<div clas='testdiv widgetNm=${com} @click="${this.test}' ><ram-widget-title-element widgetNm=${com} "></ram-widget-title-element></ clas='testdiv' >`
+                                })}
                             </div>
                         </div>
                         <div class='ram-widget-right'>
@@ -147,6 +145,7 @@
                     </div>
                 </div>`;
             }
+
         }
 
         customElements.define('ram-widget-page', MyElement);
