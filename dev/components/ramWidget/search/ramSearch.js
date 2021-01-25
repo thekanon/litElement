@@ -1,4 +1,4 @@
-import {LitElement,html,css} from '../../../node_modules/lit-element/lit-element.js'
+import {LitElement,html,css} from 'lit-element'
 
 class MyElement extends LitElement {
     static get properties() {
@@ -31,15 +31,10 @@ class MyElement extends LitElement {
     render() {
         return html `
             <div class='tab-container'>
-                ${this.tabName.map(data=>{
-                    return html`<span class='ram-tab-header'>${data}</span>`
-                })}
-                ${this.tabName.map(data=>{
-                    return html`<div class='ram-tab-body'><slot name="${data}"></slot></div>`
-                })}
+               서치
             </div>
         `;
     }
 }
 
-customElements.define('ram-tab', MyElement);
+customElements.define('ram-search', MyElement);

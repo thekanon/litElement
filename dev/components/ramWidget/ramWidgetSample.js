@@ -1,9 +1,13 @@
 import {LitElement,html,css} from '../../../node_modules/lit-element/lit-element.js'
+import {classMap} from '../../../node_modules/lit-html/directives/class-map.js';
 
 class MyElement extends LitElement {
     static get properties() {
         return {
             widgetNm:{},
+            eventSet:{type:Object},
+            parentCom:{},
+            isClicked:{},
         };
     }
     constructor() {
@@ -29,7 +33,7 @@ class MyElement extends LitElement {
             font-weight:1000 ;
         }
 
-        .ram-widget-sample-container:hover{
+        .ram-widget-sample-container:hover,.clicked{
             margin-top:0px;
             padding-bottom:15px;
             background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
@@ -46,9 +50,10 @@ class MyElement extends LitElement {
             display: block;
             margin: 9px auto 0px;
             transition: all 0.4s ease 0s;
+            opacity: 0.3;
         }
 
-        .ram-widget-sample-container:hover::before{
+        .ram-widget-sample-container:hover::before,.clicked::before{
             width: 0%;
         }
         
@@ -67,10 +72,10 @@ class MyElement extends LitElement {
             user-select: none;
             width: 150px;
             transition:0.4s;
-            color: #3ab0ea;
+            color: rgb(177 217 236);
         }
 
-        :host span:hover{ 
+        :host span:hover,{
         }
         
         .ram-widget-sample-container::after{
@@ -83,18 +88,26 @@ class MyElement extends LitElement {
             transition:0.4s;
         }
 
-        .ram-widget-sample-container:hover::after{
+        .ram-widget-sample-container:hover::after,.clicked::after{
             width: 90%;
+        }
+
+        .clicked{
         }
         `;
     }
-
+    clickEvent(event){
+        this.eventSet.click(event,this.parentCom,this);
+    }
     render() {
-        return html `<div class='ram-widget-sample-container' >
+        return html`
+        <div class='ram-widget-sample-container ${classMap({clicked:this.isClicked=='false'})}' 
+        @click="${this.clickEvent}" >
         <span>
             <${this.widgetNm}/>
         </span>
-        </div>`;
+        </div>
+        `;
     }
 
     mouseOver(){

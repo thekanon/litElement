@@ -7,7 +7,12 @@
     <title>Document</title>
     <script type="module">
         import {LitElement,html,css} from '../../../node_modules/lit-element/lit-element.js'
+        import {classMap} from '../../../node_modules/lit-html/directives/class-map.js';
         import "../ramWidget/tab/ramTab.js"
+        import "../ramWidget/search/ramSearch.js"
+        import "../ramWidget/input/ramInput.js"
+        import "../ramWidget/button/ramButton.js"
+        import "../ramWidget/select/ramSelect.js"
         import "../ramWidget/ramWidgetSample.js"
 
         class MyElement extends LitElement {
@@ -15,6 +20,8 @@
             static get properties() {
                 return {
                     componentList:{type:Array},
+                    componentIsHide:{type:Object},
+                    compunentEventSet:{type:Object},
                 };
             }
             constructor() {
@@ -26,6 +33,11 @@
                     'ram-button',
                     'ram-search',
                 ]
+                this.componentIsHide={};
+                this.componentList.forEach((v,i)=>this.componentIsHide[v]=i==0?false:true);
+                this.compunentEventSet={
+                    click:this.test
+                }
             }
 
             static get styles() {
@@ -36,34 +48,33 @@
 
                 .ram-widget-background{
                     width:100%;
-                    height:920px;
                     background:#efefef;
                     text-align: center;
                 }
 
                 .ram-container{
-<<<<<<< HEAD
-                    width:100%;
-=======
-                    width:1800px;
-                    min-width: 1700px;
->>>>>>> 403d988b6b9c8ea9c7b5cbe2ddd8e33d9a5116b7
-                    margin-top: 130px;
+                    margin-top: 220px;
+                    margin-bottom: 120px;
                 }
                 
                 .ram-widget-left,.ram-widget-right{
                     float:left;
+                    width:750px;
                 }
-                .ram-widget-left {
-                    float:left;
-                    width:50%;
-                }
+                
                 .ram-widget-right{
-                    width: 50%;
-                    height: 580px;
+                    width: 574px;
+                    height: 430px;
                     background: white;
                     border: 1px solid rgb(206, 206, 206);
-                    margin-top: 30px;
+                    padding: 0px 30px 0px;
+                    margin: 38px 70px;
+                    display: flex !important;
+                    align-items: center;
+                }
+
+                .ram-widget-right *{
+                    margin:0 auto;
                 }
 
                 .ram-widget-container{
@@ -106,28 +117,23 @@
                     width: 81%;
                 }
 
-                .test{
-                    width:50px;
-                    height:50px;
-                    background:red;
-                    margin-top:50px;
-                }
-
-                .t{
-                    background:blue;
-                    width:100px;
-                    height:200px;
+                .hide{
+                    display:none;
                 }
                 `;
             }
 
-            test = () =>{
-                console.log(this);
+            test(event,main,target){
+                Object.keys(main.componentIsHide).forEach(v=>{
+                    main.componentIsHide[v] = v==target.widgetNm?false:true;
+                })
+                main.requestUpdate();
             }
 
             render() {
-                return html `<div class='ram-widget-background'>
-                    <span><a href='../../index.html'>메인메뉴로 돌아가기 임시</a><span>
+               
+                return html` <div class='ram-widget-background'>
+                    <div class='block'><a href='../../index.html'>메인메뉴로 돌아가기 임시</a></div>
                     <div class='ram-container'>
                         <div class='ram-widget-left'>
                             <h1>ram-widget-test</h1>
@@ -136,19 +142,35 @@
                             </div>
                             <div class='ram-widget-container'>
                                 ${this.componentList.map(com=>{
-                                    return html `<div clas='testdiv widgetNm=${com} @click="${this.test}' ><ram-widget-title-element widgetNm=${com} "></ram-widget-title-element></ clas='testdiv' >`
+                                    return html`
+                                    <ram-widget-title-element 
+                                    widgetNm=${com} 
+                                    .eventSet=${this.compunentEventSet} 
+                                    .parentCom="${this}"
+                                    isClicked=${this.componentIsHide[com]}                                    
+                                    ></ram-widget-title-element>`
                                 })}
                             </div>
+                        </div>
+                        <div class='ram-widget-right'>
+                            <ram-tab .tabName="${this.tabName}" class=${classMap({hide:this.componentIsHide['ram-tab']==null?true:this.componentIsHide['ram-tab']})}>
+                                ${this.tabName.map(data=>{
+                                    return html`<span slot =${data}>${data}</span>`
+                                })}
+                            </ram-tab>
+                            <ram-input  class=${classMap({hide:this.componentIsHide['ram-input']==null?true:this.componentIsHide['ram-input']})}></ram-input>
+                            <ram-select  class=${classMap({hide:this.componentIsHide['ram-select']==null?true:this.componentIsHide['ram-select']})}></ram-select>
+                            <ram-button  class=${classMap({hide:this.componentIsHide['ram-button']==null?true:this.componentIsHide['ram-button']})}></ram-button>
+                            <ram-search  class=${classMap({hide:this.componentIsHide['ram-search']==null?true:this.componentIsHide['ram-search']})}></ram-search>
                         </div>
                     </div>
                 </div>`;
             }
-
         }
-
         customElements.define('ram-widget-page', MyElement);
     </script>
 </head>
+
 <body>
     <ram-widget-page />
 
@@ -157,4 +179,5 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Staatliches&family=Pirata+One&family=Do+Hyeon&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 </style>
+
 </html>
