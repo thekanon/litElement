@@ -34,19 +34,19 @@
                 }
 
                 .ram-container{
-                    width:90%;
-                    min-width: 1700px;
+                    width:100%;
                     margin-top: 130px;
                 }
                 
                 .ram-widget-left,.ram-widget-right{
                     float:left;
-                    width:750px;
                 }
-
-                
+                .ram-widget-left {
+                    float:left;
+                    width:50%;
+                }
                 .ram-widget-right{
-                    width: 950px;
+                    width: 50%;
                     height: 580px;
                     background: white;
                     border: 1px solid rgb(206, 206, 206);
@@ -136,13 +136,6 @@
                                     <input type='text'/>
                                 </ram-widget-sample>
                             </div>
-                        </div>
-                        <div class='ram-widget-right'>
-                            <ram-tab .tabName="${this.tabName}">
-                                ${this.tabName.map(data=>{
-                                    return html`<span slot =${data}>${data}</span>`
-                                })}
-                            </ram-tab>
                         </div>
                     </div>
                 </div>`;
