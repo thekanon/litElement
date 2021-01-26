@@ -101,7 +101,7 @@ class MyElement extends LitElement {
     }
     render() {
         return html`
-        <div class='ram-widget-sample-container ${classMap({clicked:this.isClicked=='false'})}' 
+        <div class='ram-widget-sample-container ${classMap({clicked:this.isClicked==false})}' 
         @click="${this.clickEvent}" >
         <span>
             <${this.widgetNm}/>

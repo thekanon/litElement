@@ -8,20 +8,22 @@
     <script type="module">
         import {LitElement,html,css} from '../../../node_modules/lit-element/lit-element.js'
         import {classMap} from '../../../node_modules/lit-html/directives/class-map.js';
+        import {styleMap} from '../../../node_modules/lit-html/directives/style-map.js';
         import "../ramWidget/tab/ramTab.js"
         import "../ramWidget/search/ramSearch.js"
-        import "../ramWidget/input/ramInput.js"
-        import "../ramWidget/button/ramButton.js"
-        import "../ramWidget/select/ramSelect.js"
+        import "../ramWidget/ramCommon/ramCommon.js"
         import "../ramWidget/ramWidgetSample.js"
+
+        import "../ramWidget/ramWidgetDitail/ramInputDitail.js"
 
         class MyElement extends LitElement {
             tabName=[1,2,3,4,5,6];
             static get properties() {
                 return {
                     componentList:{type:Array},
-                    componentIsHide:{type:Object},
+                    componentIsClicked:{type:Object},
                     compunentEventSet:{type:Object},
+                    componentNumber:{}
                 };
             }
             constructor() {
@@ -33,11 +35,12 @@
                     'ram-button',
                     'ram-search',
                 ]
-                this.componentIsHide={};
-                this.componentList.forEach((v,i)=>this.componentIsHide[v]=i==0?false:true);
+                this.componentIsClicked={};
+                this.componentList.forEach((v,i)=>this.componentIsClicked[v]=i==0?true:false);
                 this.compunentEventSet={
                     click:this.test
                 }
+                this.componentNumber={};
             }
 
             static get styles() {
@@ -67,14 +70,27 @@
                     height: 430px;
                     background: white;
                     border: 1px solid rgb(206, 206, 206);
-                    padding: 0px 30px 0px;
                     margin: 38px 70px;
-                    display: flex !important;
-                    align-items: center;
+                    overflow:hidden;
                 }
 
                 .ram-widget-right *{
                     margin:0 auto;
+                }
+                .ram-widget-frame{
+                    height: 430px;
+                    width: 2870px;
+                    transition:0.7s;
+                    margin-left:0px;
+                    transition: all 0.7s cubic-bezier(0.32, 0.01, 0.35, 1.3) 0s;
+                }
+                .ram-widget-ditail{
+                    height: 430px;
+                    width: 574px;
+                    float: left;
+                    align-items: center;
+                    display: flex !important;
+                    box-sizing: border-box;
                 }
 
                 .ram-widget-container{
@@ -120,13 +136,19 @@
                 .hide{
                     display:none;
                 }
+
                 `;
             }
 
             test(event,main,target){
-                Object.keys(main.componentIsHide).forEach(v=>{
-                    main.componentIsHide[v] = v==target.widgetNm?false:true;
+                console.log(main.componentNumber[target.widgetNm])
+                Object.keys(main.componentIsClicked).forEach(v=>{
+                    main.componentIsClicked[v] = v==target.widgetNm?true:false;
                 })
+
+                main.styles ={
+                    marginLeft:-574*main.componentNumber[target.widgetNm] +'px',
+                }
                 main.requestUpdate();
             }
 
@@ -141,27 +163,48 @@
                                 <h6>select Widget</h6>
                             </div>
                             <div class='ram-widget-container'>
-                                ${this.componentList.map(com=>{
+                                ${this.componentList.map((com,i)=>{
+                                    this.componentNumber[com] = i;
                                     return html`
                                     <ram-widget-title-element 
                                     widgetNm=${com} 
                                     .eventSet=${this.compunentEventSet} 
                                     .parentCom="${this}"
-                                    isClicked=${this.componentIsHide[com]}                                    
+                                    ?isClicked=${this.componentIsClicked[com]}
                                     ></ram-widget-title-element>`
                                 })}
                             </div>
                         </div>
                         <div class='ram-widget-right'>
-                            <ram-tab .tabName="${this.tabName}" class=${classMap({hide:this.componentIsHide['ram-tab']==null?true:this.componentIsHide['ram-tab']})}>
+                            <div class='ram-widget-frame'  style='${styleMap(this.styles)}'>
+                                <div class='ram-widget-ditail'>
+                                    <ram-input-datail ></ram-input-datail>
+                                </div>    
+                                <div class='ram-widget-ditail'>
+                                    <ram-select .selectObj=${{}}></ram-select>
+                                </div>    
+                                <div class='ram-widget-ditail'>
+                                    <ram-tab .tabName="${this.tabName}" >
+                                        ${this.tabName.map(data=>{ return html`<span slot =${data}>${data}</span>` })}
+                                    </ram-tab></div>
+                                <div class='ram-widget-ditail'>
+                                    <ram-button></ram-button>
+                                </div>    
+                                <div class='ram-widget-ditail'>
+                                    <ram-search></ram-search>
+                                </div>    
+                            </div>
+
+                            
+                            <ram-tab .tabName="${this.tabName}" class=${classMap({hide:this.componentIsClicked['ram-tab']==null?true:this.componentIsClicked['ram-tab']})}>
                                 ${this.tabName.map(data=>{
                                     return html`<span slot =${data}>${data}</span>`
                                 })}
                             </ram-tab>
-                            <ram-input  class=${classMap({hide:this.componentIsHide['ram-input']==null?true:this.componentIsHide['ram-input']})}></ram-input>
-                            <ram-select  class=${classMap({hide:this.componentIsHide['ram-select']==null?true:this.componentIsHide['ram-select']})}></ram-select>
-                            <ram-button  class=${classMap({hide:this.componentIsHide['ram-button']==null?true:this.componentIsHide['ram-button']})}></ram-button>
-                            <ram-search  class=${classMap({hide:this.componentIsHide['ram-search']==null?true:this.componentIsHide['ram-search']})}></ram-search>
+                            <ram-input-datail class=${classMap({hide:this.componentIsClicked['ram-input']==null?true:this.componentIsClicked['ram-input']})}></ram-input-datail>
+                            <ram-select .selectObj=${{}}  class=${classMap({hide:this.componentIsClicked['ram-select']==null?true:this.componentIsClicked['ram-select']})}></ram-select>
+                            <ram-button  class=${classMap({hide:this.componentIsClicked['ram-button']==null?true:this.componentIsClicked['ram-button']})}></ram-button>
+                            <ram-search  class=${classMap({hide:this.componentIsClicked['ram-search']==null?true:this.componentIsClicked['ram-search']})}></ram-search>
                         </div>
                     </div>
                 </div>`;
