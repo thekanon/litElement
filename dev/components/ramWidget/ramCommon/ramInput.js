@@ -5,12 +5,20 @@ class MyElement extends LitElement {
     static get properties() {
         return {
             inputObj:{type:Object},
-            data:{type:String}
         };
     }
     constructor() {
         super();
-        this.data = '';
+        this.inputObj = {
+            data:'',
+            main:this,
+            style:{
+            },
+            event:{
+            },
+            size:5,
+            dataNx:'kor',
+        }
     }
 
     static get styles() {
@@ -49,6 +57,16 @@ class MyElement extends LitElement {
         this.inputObj.event.keyup(event,this.inputObj.main,this)
         this.dataNxCheck(event);
     }
+    
+    changeEvent(event){
+        if(this.inputObj.event.change!=null)
+        this.inputObj.event.change(event,this.inputObj.main,this)
+    }
+
+    keydownEvent(event){
+        if(this.inputObj.event.keydown!=null)
+        this.inputObj.event.keydown(event,this.inputObj.main,this)
+    }
 
     update(){
         super.update();
@@ -59,30 +77,43 @@ class MyElement extends LitElement {
 
     connectedCallback() {
             super.connectedCallback()
-            this.styles={};
+            this.myStyle={};
             if(this.inputObj.style)
             Object.keys(this.inputObj.style).forEach(v=>{
-                this.styles[v] = this.inputObj.style[v];
+                this.myStyle[v] = this.inputObj.style[v];
             })
+            if(this.inputObj.data == undefined)
+            this.inputObj.data =  '';
 
-            this.inputObj.event = this.inputObj.event ? this.inputObj.event : {};
             this.requestUpdate();
     }
 
     reSizing(){
         const wd = this.inputObj.size <50 ? this.inputObj.size*7.21 : 50*7.21;
-        this.styles.width = wd+'px'
+        this.myStyle.width = wd+'px'
     }
 
     render() {
         this.reSizing();
         return html`
-               <input style='${styleMap(this.styles)}' @keyup="${this.keyupEvent}" .value=${this.data} @click="${()=>{this.connectedCallback()}}">
+               <input style='${styleMap(this.myStyle)}'
+                @keyup="${this.keyupEvent}" 
+                @keydown="${this.keydownEvent}" 
+                @change="${this.changeEvent}"
+                .value=${this.inputObj.data} >
         `;
     }
 
     dataNxCheck(event){
-        this.data=event.target.value;
+        this.inputObj.data=event.target.value;
+        switch(this.inputObj.dataNx){
+            case 'digit':{
+                if(event.code.indexOf('Digit')){
+                    console.log('안됨')
+                    this.inputObj = {...this.inputObj};
+                }
+            }
+        }
     }
 }
 

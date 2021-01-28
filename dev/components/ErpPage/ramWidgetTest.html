@@ -13,11 +13,12 @@
         import "../ramWidget/search/ramSearch.js"
         import "../ramWidget/ramCommon/ramCommon.js"
         import "../ramWidget/ramWidgetSample.js"
+        import "../ramWidget/sample.js"
 
         import "../ramWidget/ramWidgetDitail/ramInputDitail.js"
 
         class MyElement extends LitElement {
-            tabName=[1,2,3,4,5,6];
+            tabName=['1,2,3'];
             static get properties() {
                 return {
                     componentList:{type:Array},
@@ -41,6 +42,7 @@
                     click:this.test
                 }
                 this.componentNumber={};
+                
             }
 
             static get styles() {
@@ -66,7 +68,7 @@
                 }
                 
                 .ram-widget-right{
-                    width: 574px;
+                    width: 750px;
                     height: 430px;
                     background: white;
                     border: 1px solid rgb(206, 206, 206);
@@ -79,14 +81,14 @@
                 }
                 .ram-widget-frame{
                     height: 430px;
-                    width: 2870px;
+                    width: 3750px;
                     transition:0.7s;
                     margin-left:0px;
                     transition: all 0.7s cubic-bezier(0.32, 0.01, 0.35, 1.3) 0s;
                 }
                 .ram-widget-ditail{
                     height: 430px;
-                    width: 574px;
+                    width: 750px;
                     float: left;
                     align-items: center;
                     display: flex !important;
@@ -147,14 +149,14 @@
                 })
 
                 main.styles ={
-                    marginLeft:-574*main.componentNumber[target.widgetNm] +'px',
+                    marginLeft:-750*main.componentNumber[target.widgetNm] +'px',
                 }
                 main.requestUpdate();
             }
 
-            render() {
-               
-                return html` <div class='ram-widget-background'>
+            render() {                
+                return html` 
+                <div class='ram-widget-background'>
                     <div class='block'><a href='../../index.html'>메인메뉴로 돌아가기 임시</a></div>
                     <div class='ram-container'>
                         <div class='ram-widget-left'>
@@ -194,17 +196,6 @@
                                     <ram-search></ram-search>
                                 </div>    
                             </div>
-
-                            
-                            <ram-tab .tabName="${this.tabName}" class=${classMap({hide:this.componentIsClicked['ram-tab']==null?true:this.componentIsClicked['ram-tab']})}>
-                                ${this.tabName.map(data=>{
-                                    return html`<span slot =${data}>${data}</span>`
-                                })}
-                            </ram-tab>
-                            <ram-input-datail class=${classMap({hide:this.componentIsClicked['ram-input']==null?true:this.componentIsClicked['ram-input']})}></ram-input-datail>
-                            <ram-select .selectObj=${{}}  class=${classMap({hide:this.componentIsClicked['ram-select']==null?true:this.componentIsClicked['ram-select']})}></ram-select>
-                            <ram-button  class=${classMap({hide:this.componentIsClicked['ram-button']==null?true:this.componentIsClicked['ram-button']})}></ram-button>
-                            <ram-search  class=${classMap({hide:this.componentIsClicked['ram-search']==null?true:this.componentIsClicked['ram-search']})}></ram-search>
                         </div>
                     </div>
                 </div>`;

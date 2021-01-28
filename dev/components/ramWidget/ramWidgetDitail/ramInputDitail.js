@@ -20,16 +20,25 @@ class MyElement extends LitElement {
             event:{
             },
             size:20,
-            dataNx:'kor',
+            dataNx:'digit',
         }
 
         this.selectObj1={
+            main:this,
             options:{
                 digit:'digit',
                 num:'num',
                 nm:'nm',
                 ssn:'ssn',
                 kor:'kor',
+            }
+        }
+
+        this.buttonObj1={
+            main:this,
+            label:'적용하기',
+            event:{
+                click:this.aplly
             }
         }
     }
@@ -61,14 +70,18 @@ class MyElement extends LitElement {
     //dom 로드시 실행
     connectedCallback() {
         super.connectedCallback()
-        this.requestUpdate
     }
 
-    test(e,main,child){
-        main.inputObj1.size = child.data;
+    test(e,main,target){
+        console.log(target.inputObj.data)
+        main.inputObj1.size = target.inputObj.data;
         main.inputObj1 = {...main.inputObj1}
         if(e.code == 'Enter') 
-        main.requestUpdate(main.inputObj1.size,child.data)
+        main.requestUpdate()
+    }
+
+    aplly(e,main,target){
+        main.requestUpdate()
     }
     
     render() {
@@ -82,17 +95,18 @@ class MyElement extends LitElement {
             <tr>
                 <td>size : </td>
                 <td><ram-input .inputObj="${{
+                    data:20,
                     main:this,
                     size:3,
                     event:{
-                        keyup:this.test
+                        change:this.test
                     }}}"></ram-input></td>
             </tr>
             <tr>
                 <td>data-nx : </td>
                 <td><ram-select  .selectObj=${this.selectObj1}></ram-select></td>
             </tr>
-            <tr><td colspan=2 class='fc'><ram-button></ram-button></td></tr>
+            <tr><td colspan=2 class='fc'><ram-button .buttonObj="${this.buttonObj1}"></ram-button></td></tr>
             
         </table>
         </div>`;
